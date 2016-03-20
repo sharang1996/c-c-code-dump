@@ -1,0 +1,8 @@
+document.write("<SCR"+"IPT language='JavaScript1.1' SRC=\"https://ad.doubleclick.net/ddm/adj/N1933.153767IASMEDIA/B8762039.118447945;sz=300x250;click=https%3A//secserv.adtech.de/adlink%2F1289%2F5687905%2F0%2F170%2FAdId%3D12505434%3BBnId%3D4%3Bitime%3D62021901%3Blink%3Dhttp%3A%2F%2Fpixel%2Emathtag%2Ecom%2Fclick%2Fimg%3Fmt%5Faid%3D6883355407834080145%26mt%5Fid%3D1862624%26mt%5Fadid%3D141726%26redirect%3D;ord=62021901?\">\n");
+document.write("</SCR"+"IPT>\n");
+document.write("<NOSCRIPT>\n");
+document.write("<A HREF=\"https://secserv.adtech.de/adlink/1289/5687905/0/170/AdId=12505434;BnId=4;itime=62021901;nodecode=yes;link=http://pixel.mathtag.com/click/img?mt_aid=6883355407834080145&mt_id=1862624&mt_adid=141726&redirect=https://ad.doubleclick.net/ddm/jump/N1933.153767IASMEDIA/B8762039.118447945;sz=300x250;ord=62021901?\">\n");
+document.write("<IMG SRC=\"https://ad.doubleclick.net/ddm/ad/N1933.153767IASMEDIA/B8762039.118447945;sz=300x250;ord=62021901?\" BORDER=0 WIDTH=300 HEIGHT=250 ALT=\"Advertisement\"></A>\n");
+document.write("</NOSCRIPT>\n");
+
+

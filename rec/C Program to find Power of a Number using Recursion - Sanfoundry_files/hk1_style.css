@@ -1,0 +1,36 @@
+/* Responsive grid system 620 px width */
+.hk1_style {
+    font-size: 100%;
+    line-height: 140%;
+    /*width: 100%;*/
+    background-color: #F4F4F4; /*rgb(244,244,244); */
+    padding-left: 8px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border: none;
+    border-radius: 1px;
+    -moz-box-shadow: 1px 1px 1px #e5e5e5;
+    -webkit-box-shadow: 1px 1px 1px #e5e5e5;
+    box-shadow: 1px 1px 1px #e5e5e5; /*1px 1px 3px #888*/
+    }
+
+.hk1_style pre {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+}
+    
+.hk1_style ol {
+    /*margin-bottom: 0;*/
+    margin-left: 0.2em;
+    /*margin-right: 0;*/
+    padding-right: 0;
+    }       
+
+.hk1_style li {
+    padding-left: 2px;
+    }

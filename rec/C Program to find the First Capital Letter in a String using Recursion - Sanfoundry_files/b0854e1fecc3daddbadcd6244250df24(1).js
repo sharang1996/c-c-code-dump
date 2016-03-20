@@ -1,0 +1,3 @@
+var kid='b0854e1fecc3daddbadcd6244250df24';document.write('<div id="kmn_tag_'+kid+'" class="kmn-div">');
+kmn_sa.spark(kid,{codes:'o1,p1,t1,h',srv:'e2'});kmn_data[kid]={chain:'N1',codes:['o1','p1','t1','h'],full_index:1,order:'1o',w:728,h:90,s2sCodes:['j','d'],s2sBaseUrl:'//s2s.komoona.com/'};kmn_sa.write_js('//adserver.adtechus.com/addyn/3.0/10012.1/3631949/0/225/ADTECH;loc=100;target=_blank;misc='+kmn_ts+';rdclick=');
+document.write('</div>');

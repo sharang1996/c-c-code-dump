@@ -1,0 +1,240 @@
+/*
+ * Theme Name: iFeature Pro 5 Child
+ * Theme URI: http://cyberchimps.com/
+ * Description: Child Theme for the iFeature Pro 5 Theme
+ * Author: CyberChimps
+ * Author URI: http://cyberchimps.com/
+ * Template: ifeaturepro5
+ * Version: 1.0.0
+ */
+
+/* =Import iFeature Pro 5 Theme Styles */
+
+@import url('../ifeaturepro5/style.css');
+
+/* =Start from here */
+/* Center the copyright */
+
+body .site-footer .span6 {
+  width: 100%;
+}
+/*
+ * .site-footer #copyright {
+ *   text-align: center !important;
+ *   }
+ */
+
+/* Manish - Local customization of new theme */
+.entry-header {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.entry-content {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Turning off prev, next nav bar after the content */
+.single .more-content {
+  display: none;
+}
+
+/* Suggestions by GESHI-HIGHLIGHTER dev guy for scroll overflow-x problem - Manish */
+.wp-geshi-highlight pre {
+    border: none;
+    box-shadow: none;
+    white-space: pre;
+    word-wrap: normal;
+}
+.hk1_style pre {
+    border: none;
+    box-shadow: none;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+/* 
+ *  Content - Manish 
+ *  1. Orginal Canvas was 980px with 20px margin on both sides
+ *  2. Left sidebar - 210 px, Middle - 5+630+5, Right sidebar - 170px. So no %age allocations
+ *  3. ViewPort setting should be again fixed, no percentage values
+ *  tablets - left - tbd, middle - tbd, right - tbd
+ *  mobile - left - tbd, middle - tbd, right - tbd
+ *  4. Fonts & Background TBDs for left, middle and right sidebars
+ */
+
+/* the default setting is for viewport 1200px or more: 208+2+598+2+170 = 980px */
+/* #content { */
+/* Changing only for class=single, row-fluid and for span 6 and span 3 layout 3+6+3) */
+.single .row-fluid .span6 {
+   width: 598px;
+  margin-left: 2px;
+}
+/* Sidebar Left */
+/* #secondary:first-child { */
+.single .row-fluid [class*="span3"]:first-child {
+   width: 208px;
+}
+/* Sidebar Right */
+/* #secondary:last-child  { */
+.single .row-fluid [class*="span3"]:last-child {
+  width: 170px;
+  margin-left: 2px;
+}
+
+/* for viewport 980px to 1199px, single-page is 900px */
+@media screen and (min-width: 980px) and (max-width:1199px) {
+  /* #content { */
+  .single .row-fluid .span6 {
+    width: 518px !important;
+  }
+}
+
+/* for viewport 768px to 979px, single-page is 684px */
+@media screen and (min-width: 768px) and (max-width:979px) {
+  /* #content { */
+  .single .row-fluid .span6 {
+    width: 512px !important;
+    margin-left: 0px;
+  }
+  /* #secondary:first-child { */
+  .single .row-fluid [class*="span3"]:first-child {
+    display: none !important;
+  }
+}
+
+/* for viewport 0px to 480px to 767px, single-page decrease with every pixel */
+@media screen and (max-width:767px) {
+
+  .single .row-fluid [class*="span"] {
+    float: left !important; /* this is required to overcome bootstrap min css */
+  }
+  /* #content { */
+  .single .row-fluid .span6 {
+    width: 100% !important;
+    margin-left: 0px;
+  }
+  /* #secondary { */
+  .row-fluid [class*="span3"] {
+    display: none !important;
+  }
+  /* #secondary:first-child {
+  .single .row-fluid [class*="span3"]:first-child {
+    display: none !important;
+  } */
+}
+
+/* Manish - New theme customization */
+header#cc-header {
+  margin-bottom: 0px !important;
+}
+
+#navigation {
+  margin-bottom: 0px !important;
+}
+
+tbody {
+    vertical-align: top;
+}
+
+/* collapsomatic padding on expand issue */
+.collapseomatic_content {
+  padding: 0px 0px 20px 0px;
+}
+
+
+
+table,th,td {
+  border: 1px solid #cccccc;
+}
+
+/* Manish - Importing changes from old theme */
+
+/* CSS for Bestbook table columns */
+table.bestbooks {
+  border: 0;
+  width: 100%;
+  text-align: center;
+}
+table.bestbooks td.bookna {
+  text-align: left;
+  font-weight:bold;
+}
+
+/* margin squeezed below content */
+article.post, article.page, article.attachment {
+    margin-bottom: 5px !important ;
+}
+
+/* Sanfoundry Box for content after posts - Manish */
+.sf-post {
+    background: none repeat scroll 0% 0% #FDFDFD;
+    border: 1px solid #E5E5E5;
+    clear: both;
+    margin: 20px 0px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: justify;
+
+}
+
+.sf-postw-category {
+    /* background: none repeat scroll 0% 0% #FDFDFD;
+      border: 1px solid #E5E5E5; */
+    clear: both;
+    margin: 0px 0px;
+    overflow: hidden;
+    padding: 0px 10px; /* originally 1px overall */
+    text-align: left;
+    font-size: 90%;
+}
+
+#sidebar .widget-container {
+   margin-bottom: 10px !important;
+   padding: 0px 0px 0px 0px !important;
+}
+#sidebar h3.widget-title {
+   margin-top: 0px !important;
+   padding: 5px 5px 5px 5px !important;
+   border: 1px solid !important;
+   /* border-color: #888888 #666666 #666666 #666666; */
+   border-color: #fefefe #cecece #cecece #cecece !important;
+   /* border-radius: 3px 3px 0px 0px; */
+   border-radius: 0px 0px 0px 0px !important;
+   /* background-color: #fefefe; */
+   background: linear-gradient(to bottom, #cecece 0%, #eeeeee 2%, #fefefe 100%) !important;
+   /* background: linear-gradient(to bottom, #B6B6B6 0%, #A4A4A4 2%, #717171 100%); *//* repeat scroll 0% 0% transparent; */
+   box-shadow: none !important;
+   /* color: #fff; */
+   color: #777 !important;
+   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5) !important;
+   font-weight: 100 !important;
+   font-size: 1em !important;
+   line-height: 1em !important;
+   text-align: center !important;
+}
+
+.sf-widget-title {
+   margin-top: 0px;
+   padding: 5px 5px 5px 5px;
+   border: 1px solid;
+   /* border-color: #888888 #666666 #666666 #666666; */
+   border-color: #fefefe #cecece #cecece #cecece;
+   /* border-radius: 3px 3px 0px 0px; */
+   border-radius: 0px 0px 0px 0px;
+   /* background-color: #fefefe; */
+   background: linear-gradient(to bottom, #cecece 0%, #eeeeee 2%, #fefefe 100%);
+   /* background: linear-gradient(to bottom, #B6B6B6 0%, #A4A4A4 2%, #717171 100%); *//* repeat scroll 0% 0% transparent; */
+   box-shadow: none;
+   /* color: #fff; */
+   color: #777;
+   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
+   font-weight: 100;
+   font-size: 1em;
+   line-height: 1em;
+   text-align: center;
+}
+
+.sf_footer{
+    clear:both;
+}

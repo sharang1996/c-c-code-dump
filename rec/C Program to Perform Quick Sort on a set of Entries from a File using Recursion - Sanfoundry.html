@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://www.sanfoundry.com/c-program-quick-sort-recursion/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	
+	<title>C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry</title>
+	
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://www.sanfoundry.com/xmlrpc.php">
+	
+	<!-- IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="http://www.sanfoundry.com/wp-content/themes/ifeaturepro5/inc/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	
+	<style type="text/css">/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c .de1, .c .de2 {}
+.c  {font-family:monospace;}
+.c .imp {font-weight: bold; color: red;}
+.c li, .c .li1 {font-weight: normal; vertical-align:top;}
+.c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c .li2 {font-weight: bold; vertical-align:top;}
+.c .kw1 {color: #b1b100;}
+.c .kw2 {color: #000000; font-weight: bold;}
+.c .kw3 {color: #000066;}
+.c .kw4 {color: #993333;}
+.c .co1 {color: #666666; font-style: italic;}
+.c .co2 {color: #339933;}
+.c .coMULTI {color: #808080; font-style: italic;}
+.c .es0 {color: #000099; font-weight: bold;}
+.c .es1 {color: #000099; font-weight: bold;}
+.c .es2 {color: #660099; font-weight: bold;}
+.c .es3 {color: #660099; font-weight: bold;}
+.c .es4 {color: #660099; font-weight: bold;}
+.c .es5 {color: #006699; font-weight: bold;}
+.c .br0 {color: #009900;}
+.c .sy0 {color: #339933;}
+.c .st0 {color: #ff0000;}
+.c .nu0 {color: #0000dd;}
+.c .nu6 {color: #208080;}
+.c .nu8 {color: #208080;}
+.c .nu12 {color: #208080;}
+.c .nu16 {color:#800080;}
+.c .nu17 {color:#800080;}
+.c .nu18 {color:#800080;}
+.c .nu19 {color:#800080;}
+.c .me1 {color: #202020;}
+.c .me2 {color: #202020;}
+.c .ln-xtra, .c li.ln-xtra, .c div.ln-xtra {background-color: #ffc;}
+.c span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash .de1, .bash .de2 {}
+.bash  {font-family:monospace;}
+.bash .imp {font-weight: bold; color: red;}
+.bash li, .bash .li1 {font-weight: normal; vertical-align:top;}
+.bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash .li2 {font-weight: bold; vertical-align:top;}
+.bash .kw1 {color: #000000; font-weight: bold;}
+.bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash .co0 {color: #666666; font-style: italic;}
+.bash .co1 {color: #800000;}
+.bash .co2 {color: #cc0000; font-style: italic;}
+.bash .co3 {color: #000000; font-weight: bold;}
+.bash .co4 {color: #666666;}
+.bash .es1 {color: #000099; font-weight: bold;}
+.bash .es2 {color: #007800;}
+.bash .es3 {color: #007800;}
+.bash .es4 {color: #007800;}
+.bash .es5 {color: #780078;}
+.bash .es_h {color: #000099; font-weight: bold;}
+.bash .br0 {color: #7a0874; font-weight: bold;}
+.bash .sy0 {color: #000000; font-weight: bold;}
+.bash .st0 {color: #ff0000;}
+.bash .st_h {color: #ff0000;}
+.bash .nu0 {color: #000000;}
+.bash .re0 {color: #007800;}
+.bash .re1 {color: #007800;}
+.bash .re2 {color: #007800;}
+.bash .re4 {color: #007800;}
+.bash .re5 {color: #660033;}
+.bash .ln-xtra, .bash li.ln-xtra, .bash div.ln-xtra {background-color: #ffc;}
+.bash span.xtra { display:block; }
+</style><link rel="canonical" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry.html">
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.5.2.8 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry">
+<meta property="og:description" content="The following C program, using recursion, performs quick sort. A quick sort is a sorting algorithm with complexity of O(nlogn). It is used for sorting numbers, structure, files. Here is the source code of the C program to display a linked list in reverse. The C program is successfully compiled and run on a Linux [...]">
+<meta property="og:url" content="http://www.sanfoundry.com/c-program-quick-sort-recursion/">
+<meta property="og:site_name" content="Sanfoundry">
+<meta property="article:section" content="C Program - Recursion">
+<meta property="article:section" content="C-Programs-All">
+<meta property="article:published_time" content="2013-02-14T08:00:01+00:00">
+<meta property="article:modified_time" content="2015-08-24T18:42:02+00:00">
+<meta property="og:updated_time" content="2015-08-24T18:42:02+00:00">
+<meta property="og:image" content="http://www.sanfoundry.com/wp-content/uploads/2014/08/C-Programming-1000-Programs.png">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Sanfoundry » Feed" href="http://www.sanfoundry.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Sanfoundry » Comments Feed" href="http://www.sanfoundry.com/comments/feed/">
+			<link rel="shortcut icon" href="http://www.sanfoundry.com/wp-content/uploads/2015/03/sanfoundry-favicon.png" type="image/x-icon">
+		<link rel="stylesheet" id="collapseomatic-css-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="digg-digg-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/diggdigg-style.css" type="text/css" media="screen">
+<link rel="stylesheet" id="arevico_scsfbcss-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/scs.css" type="text/css" media="all">
+<link rel="stylesheet" id="shortcode_style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/shortcodes.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp_geshi_hk1_style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/hk1_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="elements_style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/elements.css" type="text/css" media="all">
+<link rel="stylesheet" id="jcarousel-skin-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/skin.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-responsive-style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/bootstrap-responsive.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="cyberchimps_responsive-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/cyberchimps-responsive.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="core-style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/core.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="skin-style-css" href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/legacy.css" type="text/css" media="all">
+<script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/cb=gapi.loaded_1" async=""></script><script type="text/javascript" async="" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/vglnk.js"></script><script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/cb=gapi.loaded_0" async=""></script><script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/quant.js" type="text/javascript"></script><script type="text/javascript" async="" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/sbhK2lTE.js"></script><script type="text/javascript" async="" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/lidar.js"></script><script async="" type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/saved_resource"></script><script async="" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/beacon.js"></script><script charset="UTF-8" type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/impl.176-RELEASE.js"></script><script async="" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/analytics.js"></script><script async="" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/loader.js"></script><script id="facebook-jssdk" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/all.js"></script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/jquery.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/collapse.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/scs.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var lb_l_ret = {"fb_id":"123407957736320","display_on_post":"1","show_once":"30","delay":"30000","fblocale":"","width":"610","height":"340","fbcolorscheme":"light","overlaycolor":"#000000","overlayop":"0.65","extracss":"","eam":"1","appid":"139987706155608","hideonlike":"1","connect":"1","cmessage":"","gaevent":"1","mab":"Like Us to stay updated on 10000+ Free MCQs on C, C++, Linux, Kernel and SAN - daily! ","display_on_page":"","fancybox":"","display_on_homepage":"","facebookheader":"","display_on_archive":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/launch_extended.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/gallery-lightbox.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/jquery.slimbox.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/swipe-call.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/core.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/comment-reply.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.sanfoundry.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.sanfoundry.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 3.5">
+<link rel="shortlink" href="http://www.sanfoundry.com/?p=7654">
+
+        <!-- BuySellAds.com Ad Code -->
+        <script type="text/javascript">
+        (function(){
+          var bsa = document.createElement('script');
+              bsa.type= 'text/javascript';
+              bsa.async = true;
+              bsa.src='//s3.buysellads.com/ac/bsa.js';
+          (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+        })();
+        </script><script type="text/javascript" async="" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/bsa.js"></script>
+        <!-- END BuySellAds.com Ad Code --> 
+      <style type="text/css">.ie8 .container {max-width: 1020px;width:auto;}</style><style type="text/css">
+
+</style>
+<style type="text/css">.trc_rbox_container{direction:ltr;text-align:left}.trc_rbox_header{border-style:solid;border-width:0}.in_trc_header{position:relative!important;float:right;margin:0}#trc_rbox_css_loaded{overflow:hidden;width:0;height:0}.trc_rbox{margin-top:0}.trc_rbox_div{margin:0 0 3px;direction:ltr;padding:0;box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-webkit-box-sizing:border-box;overflow:auto;position:relative;width:auto;*width:auto;border:solid #CCC 1px}.loading-animation span{display:block}.videoCube{zoom:1;cursor:pointer;float:none;overflow:hidden;box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-webkit-box-sizing:border-box}div.videoCube:hover,.videoCube_hover{cursor:pointer}.videoCube span.video-title:hover,.videoCube_hover span.video-title{text-decoration:underline}.videoCube a{text-decoration:none;border:0;color:#000;cursor:pointer}.videoCube a:hover,.videoCube_hover a,.videoCube a:link,.videoCube a{text-decoration:none!important;outline:0}.videoCube a .thumbBlock{float:left;display:block;overflow:hidden!important}.videoCube a img,.videoCube img{border:0;_border:0;display:block;margin:0;height:auto;width:auto}.videoCube .video-label{display:block;overflow:hidden}.videoCube .video-title{width:auto!important;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.videoCube .video-duration a{}.videoCube .video-duration{height:0;float:left;position:relative;color:#fff;font-size:11px}.videoCube .video-duration dt{border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;background-color:#000;opacity:.6;filter:alpha(opacity=60)}.videoCube span.video-label.trc_ellipsis{position:relative;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical}.sponsored-default .video-description{font-weight:400;color:#000;font-size:9px;max-height:22px;*height:22px;overflow:hidden;line-height:9px}.video-duration.video-duration-detail div{color:#fff}.sponsored-default{background-color:#f7f6c6;padding-bottom:0!important}.trc_rbox .sponsored{position:relative;display:block;overflow:visible;height:auto;width:auto;padding-right:0;text-align:right;font-size:9px}.sponsored-url{white-space:nowrap;float:left;overflow:hidden;width:98%;height:auto;margin-top:0;margin-left:1px;padding-bottom:2px;color:green;font-size:9px;text-decoration:underline}.sponsored-default .video-title{height:26px;font-size:11px;line-height:13px;max-height:26px;*height:26px}.sponsored-default .thumbBlock img{}.sponsored-default .thumbBlock{text-align:center;background-color:transparent}.trc_rbox_div{height:410px}.videoCube{direction:ltr;font-size:11px;margin:0;color:#000;border-width:0}.videoCube.vertical:first-child{border-top:0;margin-top:0}.videoCube.horizontal:first-child{border-left:0;margin-left:0}.trc_rbox .trc_rbox_div .videoCube.vertical{_margin-top:expression(this.previousSibling==null?'0':'default')}.trc_rbox .trc_rbox_div .videoCube.horizontal{_margin-left:expression(this.previousSibling==null?'0':'default')}div.videoCube:hover,.videoCube_hover{background-color:#EBF0FF;color:#000}.videoCube .thumbBlock{margin-right:5px;margin-left:1px;border-style:solid}.videoCube a img,.videoCube img{border-color:#ececec}.videoCube .overlayImg{}.videoCube .video-label-box{margin-left:81px}.videoCube .video-label dt{font-weight:700}.videoCube .video-title{height:auto;margin-bottom:3px;white-space:normal}.videoCube .trc_inline_detail_spacer{display:inline-block;white-space:pre}.sponsored-default{padding-bottom:0}.loading-animation{font-family:sans;font-size:1.5em;text-align:center;color:gray;height:100%}.trc_rbox_header{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;text-decoration:none;color:#000}.trc_header_right_part{position:absolute;left:50%;top:0}.branding_div{overflow:visible;float:right}.branding_div img{height:20px}.trc_pager div{float:left;font-family:sans;cursor:pointer;margin-left:2px;margin-right:2px}.trc_pager_prev,.trc_pager_next{}.trc_pager{font-weight:400}.trc_pager_pages{display:block!important}.trc_related_container div.horizontal{float:left;box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-webkit-box-sizing:border-box}.trc_related_container div.vertical{}.trc_related_container DIV.videoCube.thumbnail_top .thumbBlock,.trc_related_container DIV.videoCube.thumbnail_bottom .thumbBlock{float:none}@media screen and (-webkit-min-device-pixel-ratio:0){.sponsored-url{margin-top:2px}}.vidiscovery-note{display:none}.pager_disabled{cursor:auto}.videoCube .thumbBlock .trc_sponsored_overlay_base{display:block;width:auto;margin-left:0;position:absolute;color:#fff!important}.videoCube .thumbBlock .trc_sponsored_overlay{filter:alpha(opacity=60);opacity:.6;display:block;position:absolute;*left:0}.videoCube .thumbBlock .trc_sponsored_overlay_base .sponsored{position:relative;display:block;overflow:visible;width:auto;text-align:center;padding:0 5px;margin-top:0}.videoCube .thumbBlock .trc_sponsored_overlay_base.round .trc_sponsored_overlay{border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px}.videoCube .thumbBlock .trc_sponsored_overlay_base.round{margin-left:4px}.thumbnail-emblem{background-color:transparent;background-repeat:no-repeat;position:absolute;z-index:50}.playerCube .thumbnail-overlay,.videoCube .thumbnail-overlay{position:absolute;background-color:transparent;background-repeat:no-repeat;z-index:50}.videoCube:hover .thumbnail-overlay,.videoCube_hover .thumbnail-overlay{position:absolute;background-color:transparent;background-repeat:no-repeat;z-index:50}.thumbnail_bottom{padding-bottom:8px}.trc_pager_next img,trc_pager_next pager_disabled img,trc_pager_next:hover img{-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1);filter:FlipH;-ms-filter:"FlipH"}.trc_cover_iframe{position:absolute;z-index:100000;top:0;left:0;background:#000;opacity:.4;filter:alpha(opacity=40);border:0}.trc_lightbox_base{z-index:100001;position:fixed}.trc_lightbox_overlay{background-color:transparent;position:absolute;z-index:100002}.trc_lightbox_transparent{position:absolute;z-index:100003}#trc_lightbox_header{font-family:"Trebuchet MS",Helvetica,sans-serif}.trc_whitebox{background-color:#fff;position:relative;z-index:100004;padding:0 20px 20px;margin:0 auto;border:2px solid #000;-moz-box-shadow:3px 3px 20px #000;-webkit-box-shadow:3px 3px 20px #000;box-shadow:3px 3px 20px #000;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.trc_whiteboxCloseButton{width:32px;height:32px;border:0;position:absolute;right:-16px;top:-14px;cursor:pointer;background:url(//cdn.taboola.com/taboola-generic/close.png) no-repeat top left transparent;color:#fff;color:transparent;font-size:0}.trc_related_container .logoDiv{font-family:Arial,Helvetica,sans-serif;white-space:nowrap;font-size:9px}.trc_related_container .logoDiv a{font-size:9px;text-decoration:none!important;color:#000;margin-right:1px;vertical-align:text-bottom}.logoDiv a span:hover{text-decoration:underline}.trc_rbox_header .logoDiv{font-size:1em}.trc_related_container .vertical-start-shade{background-image:url(//cdn.taboola.com/taboola-generic/shade-down.png);height:10px;width:auto;position:absolute;z-index:5}.trc_related_container .vertical-end-shade{background-image:url(//cdn.taboola.com/taboola-generic/shade-up.png);height:10px;width:auto;position:absolute;z-index:5}.trc_related_container .horizontal-start-shade{background-image:url(//cdn.taboola.com/taboola-generic/shade-right.png);height:auto;width:10px;position:absolute;z-index:5}.trc_related_container .horizontal-end-shade{background-image:url(//cdn.taboola.com/taboola-generic/shade-left.png);height:auto;width:10px;position:absolute;z-index:5}.trc_rbox_container.trc_expandable{overflow:hidden;max-height:0;transition-property:max-height;-webkit-transition-property:max-height;-moz-transition-property:max-height;-o-transition-property:max-height;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0)}DIV.trc_autoplaylist-box{margin:6px auto 0;border:0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;padding:4px;font-family:"Trebuchet MS",Helvetica,sans-serif;width:320px;background:#191919;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#191919', endColorstr='#393939');-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#191919, endColorstr=#393939)";background:-webkit-gradient(linear,left top,left bottom,from(#191919),to(#393939));background:-moz-linear-gradient(top,#191919,#393939);background:linear-gradient(top,#191919,#393939)}DIV.trc_autoplaylist-box .trc-next-up-header{font-size:14px;color:#CCC;float:left;line-height:31px;margin:0 4px 0 6px;overflow:hidden;white-space:nowrap}DIV.trc_autoplaylist-box .trc-next-up-countdown{color:#fff;font-weight:700;font-size:15px;padding-left:4px}DIV.trc_autoplaylist-box .nextup{cursor:pointer}DIV.trc_autoplaylist-box .nextup .thumbblock{border:solid #FEFEFE 1px;margin-right:10px}DIV.trc_autoplaylist-box:hover .nextup .thumbblock SPAN.thumbnail-overlay{background-image:url(//cdn.taboola.com/taboola-generic/lightbox-overlay.png)}DIV.trc_autoplaylist-box .nextup .video-label-box{color:#fff;font-weight:700;font-size:12px;line-height:14px}.trc-syndication-link{text-decoration:none;color:inherit}.playerCube{width:100%;height:100%;position:relative;cursor:pointer}.playerCube .thumbnail-overlay{width:100%;height:100%;top:0;left:0;position:absolute}.trc_related_container .whatsThisSyndicated{position:absolute;cursor:pointer}.trc_related_container .whatsThisSyndicated.a-bottom-right,.trc_related_container .static-text.bottom-right{bottom:0;right:0}.trc_related_container .whatsThisSyndicated.a-top-right,.trc_related_container .static-text.top-right{top:0;right:0}.trc_related_container .whatsThisSyndicated.a-bottom-left,.trc_related_container .static-text.bottom-left{bottom:0;left:0}.trc_related_container .whatsThisSyndicated.a-top-left,.trc_related_container .static-text.top-left{top:0;left:0}.trc_related_container .videoCube .thumbBlock .branding{position:absolute;bottom:0;z-index:1;width:100%;margin:0;padding:5px 0;text-align:center}.syndicatedItem .branding{margin:0}.trc_related_container .videoCube .thumbBlock .static-text{position:absolute;z-index:1;margin:0;padding:5px;background-color:#000;color:#fff;display:block;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:400;text-align:left;text-decoration:none;opacity:.7}.trc_related_container .static-text.top{width:100%;top:0;padding:5px 0}.trc_related_container .static-text.bottom{width:100%;bottom:0;padding:2px 0}.trc-inplayer-rbox{background:#333;background:rgba(30,30,30,.9);*background:#333;bottom:0;position:absolute;height:300px;text-align:center}.trc-inplayer-rbox .trc_rbox_container{margin:50px auto 0;width:640px}.trc_rbox.trc-auto-size{width:100%;height:100%}.videoCube.thumbnail_under .thumbBlock{margin-left:0;margin-right:0}.videoCube.thumbnail_under .label-box-overlay{width:100%;height:100%;position:absolute;background:#000;opacity:.75;filter:alpha(opacity=75);top:0;_display:none}.videoCube.thumbnail_under .video-labels-anchor{width:100%;height:auto;position:absolute;z-index:1;left:0;bottom:0;min-height:2.58em;max-height:2.58em;padding-top:2px;padding-bottom:2px;_background-color:#CECECE;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-ms-transition:all .2s linear;-o-transition:all .2s linear;transition:all .2s linear;line-height:1.25em}.videoCube.thumbnail_under .video-labels-anchor span.video-title,.videoCube.thumbnail_under .video-labels-anchor span.branding{position:relative;z-index:1;padding:0 3px;margin:0}.videoCube.thumbnail_under .video-title{min-height:2.58em}.videoCube.thumbnail_under:hover .video-labels-anchor{opacity:1;max-height:6.45em}.trc-auto-size .trc_rbox_outer .trc_rbox_div{height:auto;width:auto}.trc-auto-size .trc_rbox_div .videoCube{height:auto}.trc-auto-size .trc_rbox_div .videoCube.trc-first-recommendation{margin-top:0}.trc_rbox .trc_rbox_outer .trc_rbox_div .videoCube.trc-first-in-row{margin-left:0}.trc_related_container .trc_elastic{font-size:13px;line-height:18px;color:#333;background-color:#fff;box-shadow:#666 0 0 0 4px;margin:20px}.trc_elastic .trc_rbox{width:auto}.trc_elastic .videoCube{overflow:hidden}.trc_elastic .videoCube .thumbBlock{display:block;background-color:transparent;background-position:center center;background-repeat:no-repeat;background-size:cover;position:absolute;display:inline-block;top:0;right:0;bottom:0;left:0;margin-left:0;margin-right:0}.trc_elastic .thumbBlock_holder{position:relative;width:100%}.trc_elastic .thumbnail_start .thumbBlock_holder{float:left;margin-right:10px}.trc_elastic .videoCube_aspect{width:1px}.trc_elastic .trc_rbox .trc_rbox_div{height:auto}.trc_elastic .video-label-box{display:block}.trc_user_exclude_btn{background:url(//cdn.taboola.com/libtrc/static/thumbnails/f539211219b796ffbb49949997c764f0.png) no-repeat scroll 0 0 transparent;width:12px;height:12px;position:absolute;right:2px;top:2px;z-index:9000;cursor:pointer;visibility:hidden}.trc_undo_btn{font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:400;color:#36C;text-decoration:underline;cursor:pointer;position:absolute;right:2px;top:2px;padding:0 1px;z-index:11000;visibility:hidden}.videoCube:hover .trc_user_exclude_btn,.videoCube_hover .trc_user_exclude_btn,.trc_user_excluded.videoCube:hover .trc_undo_btn,.trc_user_excluded.videoCube_hover .trc_undo_btn,.trc_undo_btn.trc_anchor{visibility:visible}.videoCube.trc_user_excluded .trc_user_exclude_btn{visibility:hidden}.trc_fade{opacity:0;filter:alpha(opacity=0);visibility:hidden;transition:opacity 500ms 0s,visibility 0s 500ms;-webkit-transition:opacity 500ms 0s,visibility 0s 500ms;-moz-transition:opacity 500ms 0s,visibility 0s 500ms;-o-transition:opacity 500ms 0s,visibility 0s 500ms;-ms-transition:opacity 500ms 0s,visibility 0s 500ms}.trc_fade.trc_in,.trc_user_excluded .trc_exclude_overlay{visibility:visible;opacity:1;filter:alpha(opacity=100);transition-delay:0s,0s;-moz-transition-delay:0s,0s;-webkit-transition-delay:0s,0s;-o-transition-delay:0s,0s;-ms-transition-delay:0s,0s}.trc_excludable .trc_exclude_overlay{position:absolute;z-index:10000;top:0;left:0;width:100%;height:100%;cursor:default;background-color:#fff}.videoCube.trc_excludable .trc_exclude_overlay.trc_fade{filter:alpha(opacity=80)\9}.videoCube.trc_user_excluded .trc_exclude_overlay{visibility:visible;opacity:.8;filter:alpha(opacity=80)}.videoCube.trc_user_excluded .thumbBlock{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#grayscale");filter:gray;-webkit-filter:grayscale(100%)}.videoCube.trc_user_excluded:hover a .video-label-box .video-title,.videoCube_hover.trc_user_excluded a .video-label-box .video-title{text-decoration:none}.videoCube.trc_user_excluded a .video-label-box *,.videoCube.trc_user_excluded:hover a .video-label-box *,.videoCube_hover.trc_user_excluded a .video-label-box *{color:#000;overflow:hidden;-webkit-transition:color 500ms 0s;-moz-transition:color 500ms 0s;-ms-transition:color 500ms 0s;-o-transition:color 500ms 0s;transition:color 500ms 0s}.videoCube.trc_user_excluded a .video-label-box .label-box-overlay{background-color:#BBB;-webkit-transition:background-color 500ms 0s;-moz-transition:background-color 500ms 0s;-ms-transition:background-color 500ms 0s;-o-transition:background-color 500ms 0s;transition:background-color 500ms 0s}.videoCube.thumbnail_under.trc_user_excluded .video-labels-anchor,.videoCube.thumbnail_under.trc_user_excluded:hover .video-labels-anchor{max-height:none;-webkit-transition:none;-moz-transition:none;-ms-transition:none;-o-transition:none;transition:none}.trc_related_container .trc_clearer{clear:both;height:0;overflow:hidden;font-size:0;line-height:0;visibility:hidden}.link-adc{float:right!important}.trc-widget-footer .link-adc a .trc_adc_wrapper,.trc_header_ext .link-adc a .trc_adc_wrapper{vertical-align:middle;height:15px;width:19px;display:inline-block;position:relative}.trc-widget-footer .link-adc a .trc_adc_s_logo,.trc_header_ext .link-adc a .trc_adc_s_logo,.trc-widget-footer .link-adc a .trc_adc_b_logo,.trc_header_ext .link-adc a .trc_adc_b_logo{vertical-align:middle;height:15px;display:inline-block;position:absolute;right:0}.trc-widget-footer .link-adc a .trc_adc_s_logo,.trc_header_ext .link-adc a .trc_adc_s_logo{width:19px;background:url(//cdn.taboola.com/libtrc/static/thumbnails/3aadbb71016ecd7a194bbe2791777e9a.png) no-repeat!important}.trc-widget-footer .link-adc a .trc_adc_b_logo,.trc_header_ext .link-adc a .trc_adc_b_logo{width:77px;background:#fff url(//cdn.taboola.com/libtrc/static/thumbnails/0781f9c5a8637d1e162874f157460048.png) no-repeat!important;right:-1px;display:none;position:absolute}.trc_mobile_disclosure_link,.trc_mobile_attribution_link,.trc_mobile_adc_link{display:none}.trc_desktop_disclosure_link,.trc_desktop_attribution_link,.trc_desktop_adc_link{display:inline}@media screen and (max-width:767px){.trc_mobile_disclosure_link{display:inline}.trc_mobile_attribution_link{display:inline}.trc_mobile_adc_link{display:inline}.trc_desktop_disclosure_link{display:none}.trc_desktop_attribution_link{display:none}.trc_desktop_adc_link{display:none}}.trc_in_iframe .trc_mobile_attribution_link,.trc_in_iframe .trc_mobile_disclosure_link{display:inline}.trc_in_iframe .trc_desktop_attribution_link,.trc_in_iframe .trc_desktop_disclosure_link{display:none}.trc_related_container .logoDiv,.trc_related_container .trc_header_ext .logoDiv{float:right}.trc_related_container .logoDiv+.logoDiv{margin-right:2px}.trc_related_container .attribution-disclosure-link-sponsored,.trc_related_container .attribution-disclosure-link-hybrid{display:none}.trc_related_container .trc-content-sponsored .attribution-disclosure-link-sponsored{display:block}.trc_related_container .trc-content-hybrid .attribution-disclosure-link-hybrid{display:block}.trc_related_container .trc-widget-footer:hover a span,.trc_related_container .trc_header_ext:hover a span{text-decoration:underline!important}.trc_related_container{clear:both}.rbox-blended .video-title{font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:17.5px;font-weight:bold;max-height:2.58em;*height:2.58em;color:black;text-decoration:none;}.rbox-blended .video-description{font-family:Arial, Helvetica, sans-serif;font-size:10px;line-height:11px;font-weight:normal;max-height:2.2em;*height:2.2em;color:black;text-decoration:none;}.rbox-blended .trc_rbox_div{width:auto;_width:99%;height:410px;border-width:1px;padding:0;}.rbox-blended .videoCube .video-duration{left:36px;display:block;}.rbox-blended .videoCube .video-label-box{margin-left:81px;margin-right:0px;}.rbox-blended .video-label,.rbox-blended .sponsored,.rbox-blended .sponsored-url{font-family:Arial, Helvetica, sans-serif;}.rbox-blended .trc_rbox_header{font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;text-decoration:none;color:black;border-width:0;background:transparent;border-style:none none solid none;border-color:#D6D5D3;padding:0;}.rbox-blended .sponsored-url{font-size:9px;font-weight:bold;text-decoration:underline;color:green;}.rbox-blended .sponsored{font-size:9px;font-weight:normal;text-decoration:none;color:#9C9A9C;}.rbox-blended .video-category{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .video-duration-detail{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .video-rating{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .video-uploader{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .video-views{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .video-published-date{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .sponsored-default .video-title{max-height:2.58em;*height:2.58em;}.rbox-blended .sponsored-default .video-description{max-height:2.2em;*height:2.2em;}.rbox-blended .videoCube{width:auto;_width:auto;background-color:transparent;border-width:1px;border-color:#D6D5D3;padding:3px;height:auto;margin-left:0px;margin-top:0px;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;}.rbox-blended div.videoCube:hover,.rbox-blended  div.videoCube_hover{background-color:transparent;}.rbox-blended .sponsored-default{background-color:#F7F6C6;}.rbox-blended div.sponsored-default:hover,.rbox-blended  div.sponsored-default.videoCube_hover{background-color:inherit;}.rbox-blended .videoCube .thumbnail-overlay{background-image:null;background-position:5% 5%;}.rbox-blended .videoCube:hover .thumbnail-overlay,.rbox-blended  .videoCube_hover .thumbnail-overlay{background-image:null;}.rbox-blended .trc_rbox_border_elm{border-color:darkgray;}.rbox-blended .videoCube .thumbBlock{border-width:0px;border-color:darkgray;}.rbox-blended div.videoCube:hover .thumbBlock{border-color:inherit;}.rbox-blended .pager_enabled{color:#0056b3;}.rbox-blended .trc_pager_counter{color:#000000;}.rbox-blended .pager_disabled{color:#7d898f;}.rbox-blended .trc_pager_prev:hover,.rbox-blended  .trc_pager_next:hover{color:#6497ED;}.rbox-blended .trc_pager_selected{color:#0056b3;}.rbox-blended .trc_pager_unselected{color:#7d898f;}.rbox-blended div.trc_pager_pages div:hover{color:#6497ED;}.rbox-blended .trc_lightbox_overlay{background-color:#000000;opacity:0.70;filter:alpha(opacity=70);}.rbox-blended .video-label-box{text-align:left;}.rbox-blended .trc_sponsored_overlay{background-color:black;}.rbox-blended .thumbnail-emblem{background-position:5% 5%;}.rbox-blended .videoCube .sponsored{margin-top:-7px;}.rbox-blended{width:300px;_width:300px;border-width:0px;border-style:solid solid solid solid;border-color:#000000;padding:0;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;box-shadow:none;}.rbox-blended .videoCube.vertical{border-style:solid none none none;}.rbox-blended .videoCube.horizontal{border-style:none none none solid;}.rbox-blended .trc_pager_prev,.rbox-blended .trc_pager_next{font-size:12px;font-weight:normal;text-decoration:none;}.rbox-blended .trc_pager_pages div{font-size:12px;font-weight:normal;text-decoration:none;}.rbox-blended .video-external-data{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .trc_pager div{font-family:serif;}.rbox-blended .playerCube .thumbnail-overlay{background-image:null;background-position:5% 5%;}.rbox-blended .playerCube:hover .thumbnail-overlay,.rbox-blended  .playerCube_hover .thumbnail-overlay{background-image:null;}.rbox-blended .playerCube .videoCube{background-color:transparent;border-color:#D6D5D3;border-width:1px;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;margin-left:0px;margin-top:0px;padding:3px;}.rbox-blended .playerCube .videoCube.horizontal{border-style:none none none none;}.rbox-blended .playerCube .videoCube .video-label-box{margin-left:81px;margin-right:0px;}.rbox-blended .playerCube .video-duration-detail{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .playerCube .video-external-data{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .playerCube .video-label-box{text-align:left;}.rbox-blended .playerCube .video-published-date{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .playerCube .video-category{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .playerCube .video-description{font-family:Arial, Helvetica, sans-serif;font-size:10px;line-height:11px;font-weight:normal;text-decoration:none;max-height:2.2em;*height:2.2em;color:black;}.rbox-blended .playerCube .videoCube .video-duration{display:block;left:36px;}.rbox-blended .playerCube .videoCube .thumbBlock{border-width:0px;border-color:darkgray;}.rbox-blended .playerCube .video-rating{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .playerCube .video-uploader{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .playerCube .video-views{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.rbox-blended .playerCube .video-title{font-family:Arial, Helvetica, sans-serif;text-decoration:none;font-size:14px;line-height:17.5px;font-weight:bold;max-height:2.58em;*height:2.58em;color:black;}.rbox-blended .playerCube div.videoCube:hover,.rbox-blended  div.videoCube_hover{background-color:transparent;}.rbox-blended .whatsThisSyndicated{font-family:Arial, Verdana, sans-serif;font-size:9px;font-weight:normal;color:black;text-decoration:none;padding:0;}.rbox-blended div.syndicatedItem:hover,.rbox-blended  div.syndicatedItem.videoCube_hover{background-color:transparent;}.rbox-blended div.syndicatedItem:hover .thumbBlock{border-color:inherit;}.rbox-blended .videoCube.syndicatedItem{background-color:transparent;border-color:#D6D5D3;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;border-width:1px;}.rbox-blended .videoCube.syndicatedItem.horizontal{border-style:none none none solid;}.rbox-blended .videoCube.syndicatedItem .thumbBlock{border-color:darkgray;border-width:0px;}.rbox-blended .videoCube.syndicatedItem .thumbnail-overlay{background-image:null;background-position:5% 5%;}.rbox-blended .videoCube.syndicatedItem.vertical{border-style:solid none none none;}.rbox-blended .videoCube.syndicatedItem .video-duration{display:block;left:36px;}.rbox-blended .videoCube.syndicatedItem .video-label-box{margin-left:0px;}.rbox-blended .syndicatedItem{background-color:transparent;}.rbox-blended .syndicatedItem .video-description{max-height:2.2em;*height:2.2em;color:black;font-family:Arial, Helvetica, sans-serif;font-size:10px;font-weight:normal;line-height:11px;text-decoration:none;}.rbox-blended .syndicatedItem .video-title{max-height:2.58em;*height:2.58em;color:black;font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:17.5px;font-weight:bold;text-decoration:none;}.rbox-blended .syndicatedItem .sponsored{color:#9C9A9C;font-size:9px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .sponsored-url{color:green;font-size:9px;font-weight:bold;text-decoration:underline;}.rbox-blended .syndicatedItem .video-category{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .video-duration-detail{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .video-external-data{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .video-published-date{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .video-rating{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .video-uploader{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .video-views{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.rbox-blended .syndicatedItem .branding{color:black;font-size:10px;font-weight:normal;text-decoration:none;font-family:Arial, Helvetica, sans-serif;background-image:null;text-align:left;}.rbox-blended .videoCube.syndicatedItem .thumbBlock .branding{text-align:left;background-color:transparent;display:block;left:0px;color:black;font-size:10px;font-weight:normal;text-decoration:none;font-family:Arial, Helvetica, sans-serif;background-image:null;}.rbox-blended .videoCube.syndicatedItem .thumbBlock .static-text{text-align:left;background-color:black;display:block;color:white;font-size:10px;font-weight:normal;text-decoration:none;font-family:Arial, Helvetica, sans-serif;}.rbox-blended .videoCube.syndicatedItem:hover .thumbnail-overlay,.rbox-blended  .videoCube_hover.syndicatedItem .thumbnail-overl{:null;}.rbox-blended .videoCube.thumbnail_start .thumbBlock_holder{width:40%;_width:40%;}.thumbnails-a .video-title{font-family:Arial, Helvetica, sans-serif;font-size:14.0px;line-height:19.0px;font-weight:bold;max-height:76.0px;*height:76.0px;color:#444;text-decoration:none;}.thumbnails-a .video-description{font-family:Arial, Helvetica, sans-serif;font-size:10px;line-height:11px;font-weight:normal;max-height:2.2em;*height:2.2em;color:black;text-decoration:none;}.thumbnails-a .trc_rbox_div{width:auto;_width:99%;height:410px;border-width:0;padding:0;}.thumbnails-a .videoCube .video-duration{left:36px;display:none;}.thumbnails-a .videoCube .video-label-box{margin-left:0;margin-right:0px;}.thumbnails-a .video-label,.thumbnails-a .sponsored,.thumbnails-a .sponsored-url{font-family:Arial, Helvetica, sans-serif;}.thumbnails-a .trc_rbox_header{font-family:Arial, Helvetica, sans-serif;font-size:14.0px;font-weight:bold;text-decoration:none;color:#555;border-width:0;background:transparent;border-style:none;border-color:#D6D5D3;padding:0 0 6px 0;}.thumbnails-a .sponsored-url{font-size:9px;font-weight:bold;text-decoration:underline;color:green;}.thumbnails-a .sponsored{font-size:9px;font-weight:normal;text-decoration:none;color:#9C9A9C;}.thumbnails-a .video-category{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .video-duration-detail{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .video-rating{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .video-uploader{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .video-views{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .video-published-date{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .sponsored-default .video-title{max-height:2.58em;*height:2.58em;}.thumbnails-a .sponsored-default .video-description{max-height:2.2em;*height:2.2em;}.thumbnails-a .videoCube{width:auto;_width:auto;background-color:transparent;border-width:1px;border-color:#D6D5D3;padding:0;height:auto;margin-left:0px;margin-top:0px;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;}.thumbnails-a div.videoCube:hover,.thumbnails-a  div.videoCube_hover{background-color:transparent;}.thumbnails-a .sponsored-default{background-color:#F7F6C6;}.thumbnails-a div.sponsored-default:hover,.thumbnails-a  div.sponsored-default.videoCube_hover{background-color:inherit;}.thumbnails-a .videoCube .thumbnail-overlay{background-image:null;background-position:5% 5%;}.thumbnails-a .videoCube:hover .thumbnail-overlay,.thumbnails-a  .videoCube_hover .thumbnail-overlay{background-image:null;}.thumbnails-a .trc_rbox_border_elm{border-color:darkgray;}.thumbnails-a .videoCube .thumbBlock{border-width:0px;border-color:darkgray;}.thumbnails-a div.videoCube:hover .thumbBlock{border-color:inherit;}.thumbnails-a .pager_enabled{color:#0056b3;}.thumbnails-a .trc_pager_counter{color:#000000;}.thumbnails-a .pager_disabled{color:#7d898f;}.thumbnails-a .trc_pager_prev:hover,.thumbnails-a  .trc_pager_next:hover{color:#6497ED;}.thumbnails-a .trc_pager_selected{color:#0056b3;}.thumbnails-a .trc_pager_unselected{color:#7d898f;}.thumbnails-a div.trc_pager_pages div:hover{color:#6497ED;}.thumbnails-a .trc_lightbox_overlay{background-color:#000000;opacity:0.70;filter:alpha(opacity=70);}.thumbnails-a .video-label-box{text-align:left;}.thumbnails-a .trc_sponsored_overlay{background-color:black;}.thumbnails-a .thumbnail-emblem{background-position:5% 5%;}.thumbnails-a .videoCube .sponsored{margin-top:-7px;}.thumbnails-a{width:300px;_width:300px;border-width:0px 0px 0px 0px;border-style:solid solid solid solid;border-color:#DFDFDF;padding:0px 0px 0px 0px;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;box-shadow:none;}.thumbnails-a .videoCube.vertical{border-style:solid none none none;}.thumbnails-a .videoCube.horizontal{border-style:none;}.thumbnails-a .trc_pager_prev,.thumbnails-a .trc_pager_next{font-size:12px;font-weight:normal;text-decoration:none;}.thumbnails-a .trc_pager_pages div{font-size:12px;font-weight:normal;text-decoration:none;}.thumbnails-a .video-external-data{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .trc_pager div{font-family:serif;}.thumbnails-a .playerCube .thumbnail-overlay{background-image:null;background-position:5% 5%;}.thumbnails-a .playerCube:hover .thumbnail-overlay,.thumbnails-a  .playerCube_hover .thumbnail-overlay{background-image:null;}.thumbnails-a .playerCube .videoCube{background-color:transparent;border-color:#D6D5D3;border-width:1px;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;margin-left:0px;margin-top:0px;padding:3px;}.thumbnails-a .playerCube .videoCube.horizontal{border-style:none none none none;}.thumbnails-a .playerCube .videoCube .video-label-box{margin-left:81px;margin-right:0px;}.thumbnails-a .playerCube .video-duration-detail{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .playerCube .video-external-data{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .playerCube .video-label-box{text-align:left;}.thumbnails-a .playerCube .video-published-date{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .playerCube .video-category{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .playerCube .video-description{font-family:Arial, Helvetica, sans-serif;font-size:10px;line-height:11px;font-weight:normal;text-decoration:none;max-height:2.2em;*height:2.2em;color:black;}.thumbnails-a .playerCube .videoCube .video-duration{display:block;left:36px;}.thumbnails-a .playerCube .videoCube .thumbBlock{border-width:0px;border-color:darkgray;}.thumbnails-a .playerCube .video-rating{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .playerCube .video-uploader{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .playerCube .video-views{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-a .playerCube .video-title{font-family:Arial, Helvetica, sans-serif;text-decoration:none;font-size:14px;line-height:17.5px;font-weight:bold;max-height:2.58em;*height:2.58em;color:black;}.thumbnails-a .playerCube div.videoCube:hover,.thumbnails-a  div.videoCube_hover{background-color:transparent;}.thumbnails-a .whatsThisSyndicated{font-family:Arial, Verdana, sans-serif;font-size:9px;font-weight:normal;color:black;text-decoration:none;padding:0;}.thumbnails-a div.syndicatedItem:hover,.thumbnails-a  div.syndicatedItem.videoCube_hover{background-color:transparent;}.thumbnails-a div.syndicatedItem:hover .thumbBlock{border-color:inherit;}.thumbnails-a .videoCube.syndicatedItem{background-color:transparent;border-color:#D6D5D3;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;border-width:1px;}.thumbnails-a .videoCube.syndicatedItem.horizontal{border-style:none;}.thumbnails-a .videoCube.syndicatedItem .thumbBlock{border-color:darkgray;border-width:0px;}.thumbnails-a .videoCube.syndicatedItem .thumbnail-overlay{background-image:null;background-position:5% 5%;}.thumbnails-a .videoCube.syndicatedItem.vertical{border-style:solid none none none;}.thumbnails-a .videoCube.syndicatedItem .video-duration{display:none;left:36px;}.thumbnails-a .videoCube.syndicatedItem .video-label-box{margin-left:0px;}.thumbnails-a .syndicatedItem{background-color:transparent;}.thumbnails-a .syndicatedItem .video-description{max-height:2.2em;*height:2.2em;color:black;font-family:Arial, Helvetica, sans-serif;font-size:10px;font-weight:normal;line-height:11px;text-decoration:none;}.thumbnails-a .syndicatedItem .video-title{max-height:57.0px;*height:57.0px;color:#444;font-family:Arial, Helvetica, sans-serif;font-size:14.0px;line-height:19.0px;font-weight:bold;text-decoration:none;}.thumbnails-a .syndicatedItem .sponsored{color:#9C9A9C;font-size:9px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .sponsored-url{color:green;font-size:9px;font-weight:bold;text-decoration:underline;}.thumbnails-a .syndicatedItem .video-category{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .video-duration-detail{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .video-external-data{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .video-published-date{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .video-rating{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .video-uploader{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .video-views{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-a .syndicatedItem .branding{color:#999999;font-size:11.0px;font-weight:bold;text-decoration:none;font-family:Arial, Helvetica, sans-serif;background-image:null;text-align:left;}.thumbnails-a .videoCube.syndicatedItem .thumbBlock .branding{text-align:left;background-color:transparent;display:none;left:0px;color:black;font-size:10px;font-weight:normal;text-decoration:none;font-family:Arial, Helvetica, sans-serif;background-image:null;}.thumbnails-a .videoCube.syndicatedItem .thumbBlock .static-text{text-align:left;background-color:black;display:none;color:white;font-size:10px;font-weight:normal;text-decoration:none;font-family:Arial, Helvetica, sans-serif;}.thumbnails-a .videoCube.syndicatedItem:hover .thumbnail-overlay,.thumbnails-a  .videoCube_hover.syndicatedItem .thumbnail-overl{:null;}.thumbnails-a .videoCube.thumbnail_start .thumbBlock_holder{width:40%;_width:40%;}.thumbnails-b .video-title{font-family:Arial, Helvetica, sans-serif;font-size:14.0px;line-height:19.0px;font-weight:bold;max-height:76.0px;*height:76.0px;color:#444;text-decoration:none;}.thumbnails-b .video-description{font-family:Arial, Helvetica, sans-serif;font-size:10px;line-height:11px;font-weight:normal;max-height:2.2em;*height:2.2em;color:black;text-decoration:none;}.thumbnails-b .trc_rbox_div{width:auto;_width:99%;height:410px;border-width:0;padding:0;}.thumbnails-b .videoCube .video-duration{left:36px;display:none;}.thumbnails-b .videoCube .video-label-box{margin-left:0;margin-right:0px;}.thumbnails-b .video-label,.thumbnails-b .sponsored,.thumbnails-b .sponsored-url{font-family:Arial, Helvetica, sans-serif;}.thumbnails-b .trc_rbox_header{font-family:Arial, Helvetica, sans-serif;font-size:16.0px;font-weight:bold;text-decoration:none;color:#555;border-width:0;background:transparent;border-style:none;border-color:#D6D5D3;padding:0 0 6px 0;}.thumbnails-b .sponsored-url{font-size:9px;font-weight:bold;text-decoration:underline;color:green;}.thumbnails-b .sponsored{font-size:9px;font-weight:normal;text-decoration:none;color:#9C9A9C;}.thumbnails-b .video-category{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .video-duration-detail{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .video-rating{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .video-uploader{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .video-views{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .video-published-date{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .sponsored-default .video-title{max-height:2.58em;*height:2.58em;}.thumbnails-b .sponsored-default .video-description{max-height:2.2em;*height:2.2em;}.thumbnails-b .videoCube{width:auto;_width:auto;background-color:transparent;border-width:1px;border-color:#D6D5D3;padding:0;height:auto;margin-left:0px;margin-top:0px;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;}.thumbnails-b div.videoCube:hover,.thumbnails-b  div.videoCube_hover{background-color:transparent;}.thumbnails-b .sponsored-default{background-color:#F7F6C6;}.thumbnails-b div.sponsored-default:hover,.thumbnails-b  div.sponsored-default.videoCube_hover{background-color:inherit;}.thumbnails-b .videoCube .thumbnail-overlay{background-image:null;background-position:5% 5%;}.thumbnails-b .videoCube:hover .thumbnail-overlay,.thumbnails-b  .videoCube_hover .thumbnail-overlay{background-image:null;}.thumbnails-b .trc_rbox_border_elm{border-color:darkgray;}.thumbnails-b .videoCube .thumbBlock{border-width:0px;border-color:darkgray;}.thumbnails-b div.videoCube:hover .thumbBlock{border-color:inherit;}.thumbnails-b .pager_enabled{color:#0056b3;}.thumbnails-b .trc_pager_counter{color:#000000;}.thumbnails-b .pager_disabled{color:#7d898f;}.thumbnails-b .trc_pager_prev:hover,.thumbnails-b  .trc_pager_next:hover{color:#6497ED;}.thumbnails-b .trc_pager_selected{color:#0056b3;}.thumbnails-b .trc_pager_unselected{color:#7d898f;}.thumbnails-b div.trc_pager_pages div:hover{color:#6497ED;}.thumbnails-b .trc_lightbox_overlay{background-color:#000000;opacity:0.70;filter:alpha(opacity=70);}.thumbnails-b .video-label-box{text-align:left;}.thumbnails-b .trc_sponsored_overlay{background-color:black;}.thumbnails-b .thumbnail-emblem{background-position:5% 5%;}.thumbnails-b .videoCube .sponsored{margin-top:-7px;}.thumbnails-b{width:300px;_width:300px;border-width:0px;border-style:none;border-color:#000000;padding:0px 0px 0px 0px;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;box-shadow:none;}.thumbnails-b .videoCube.vertical{border-style:solid none none none;}.thumbnails-b .videoCube.horizontal{border-style:none;}.thumbnails-b .trc_pager_prev,.thumbnails-b .trc_pager_next{font-size:12px;font-weight:normal;text-decoration:none;}.thumbnails-b .trc_pager_pages div{font-size:12px;font-weight:normal;text-decoration:none;}.thumbnails-b .video-external-data{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .trc_pager div{font-family:serif;}.thumbnails-b .playerCube .thumbnail-overlay{background-image:null;background-position:5% 5%;}.thumbnails-b .playerCube:hover .thumbnail-overlay,.thumbnails-b  .playerCube_hover .thumbnail-overlay{background-image:null;}.thumbnails-b .playerCube .videoCube{background-color:transparent;border-color:#D6D5D3;border-width:1px;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;margin-left:0px;margin-top:0px;padding:3px;}.thumbnails-b .playerCube .videoCube.horizontal{border-style:none none none none;}.thumbnails-b .playerCube .videoCube .video-label-box{margin-left:81px;margin-right:0px;}.thumbnails-b .playerCube .video-duration-detail{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .playerCube .video-external-data{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .playerCube .video-label-box{text-align:left;}.thumbnails-b .playerCube .video-published-date{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .playerCube .video-category{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .playerCube .video-description{font-family:Arial, Helvetica, sans-serif;font-size:10px;line-height:11px;font-weight:normal;text-decoration:none;max-height:2.2em;*height:2.2em;color:black;}.thumbnails-b .playerCube .videoCube .video-duration{display:block;left:36px;}.thumbnails-b .playerCube .videoCube .thumbBlock{border-width:0px;border-color:darkgray;}.thumbnails-b .playerCube .video-rating{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .playerCube .video-uploader{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .playerCube .video-views{font-size:10px;font-weight:normal;text-decoration:none;color:black;}.thumbnails-b .playerCube .video-title{font-family:Arial, Helvetica, sans-serif;text-decoration:none;font-size:14px;line-height:17.5px;font-weight:bold;max-height:2.58em;*height:2.58em;color:black;}.thumbnails-b .playerCube div.videoCube:hover,.thumbnails-b  div.videoCube_hover{background-color:transparent;}.thumbnails-b .whatsThisSyndicated{font-family:Arial, Verdana, sans-serif;font-size:9px;font-weight:normal;color:black;text-decoration:none;padding:0;}.thumbnails-b div.syndicatedItem:hover,.thumbnails-b  div.syndicatedItem.videoCube_hover{background-color:transparent;}.thumbnails-b div.syndicatedItem:hover .thumbBlock{border-color:inherit;}.thumbnails-b .videoCube.syndicatedItem{background-color:transparent;border-color:#D6D5D3;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;border-width:1px;}.thumbnails-b .videoCube.syndicatedItem.horizontal{border-style:none;}.thumbnails-b .videoCube.syndicatedItem .thumbBlock{border-color:darkgray;border-width:0px;}.thumbnails-b .videoCube.syndicatedItem .thumbnail-overlay{background-image:null;background-position:5% 5%;}.thumbnails-b .videoCube.syndicatedItem.vertical{border-style:solid none none none;}.thumbnails-b .videoCube.syndicatedItem .video-duration{display:none;left:36px;}.thumbnails-b .videoCube.syndicatedItem .video-label-box{margin-left:0px;}.thumbnails-b .syndicatedItem{background-color:transparent;}.thumbnails-b .syndicatedItem .video-description{max-height:2.2em;*height:2.2em;color:black;font-family:Arial, Helvetica, sans-serif;font-size:10px;font-weight:normal;line-height:11px;text-decoration:none;}.thumbnails-b .syndicatedItem .video-title{max-height:57.0px;*height:57.0px;color:#444;font-family:Arial, Helvetica, sans-serif;font-size:14.0px;line-height:19.0px;font-weight:bold;text-decoration:none;}.thumbnails-b .syndicatedItem .sponsored{color:#9C9A9C;font-size:9px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .sponsored-url{color:green;font-size:9px;font-weight:bold;text-decoration:underline;}.thumbnails-b .syndicatedItem .video-category{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .video-duration-detail{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .video-external-data{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .video-published-date{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .video-rating{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .video-uploader{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .video-views{color:black;font-size:10px;font-weight:normal;text-decoration:none;}.thumbnails-b .syndicatedItem .branding{color:#999999;font-size:11.0px;font-weight:bold;text-decoration:none;font-family:Arial, Helvetica, sans-serif;background-image:null;text-align:left;}.thumbnails-b .videoCube.syndicatedItem .thumbBlock .branding{text-align:left;background-color:transparent;display:none;left:0px;color:black;font-size:10px;font-weight:normal;text-decoration:none;font-family:Arial, Helvetica, sans-serif;background-image:null;}.thumbnails-b .videoCube.syndicatedItem .thumbBlock .static-text{text-align:left;background-color:black;display:none;color:white;font-size:10px;font-weight:normal;text-decoration:none;font-family:Arial, Helvetica, sans-serif;}.thumbnails-b .videoCube.syndicatedItem:hover .thumbnail-overlay,.thumbnails-b  .videoCube_hover.syndicatedItem .thumbnail-overl{:null;}.thumbnails-b .videoCube.thumbnail_start .thumbBlock_holder{width:40%;_width:40%;}.thumbnails-a img {
+        max-width: none;
+}
+
+/* override bootstrap default span definitions */
+.thumbnails-a [class*=span] {
+    float:none;
+    margin-left:0px;
+}
+
+
+.thumbnails-a .trc_rbox_header {
+        line-height: 1.2em;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+	background: transparent;
+	height: auto;
+}
+
+.thumbnails-a .trc_rbox_header_span .trc_header_right_column {
+        display: none;
+	background: transparent;
+	height: auto;
+}
+
+.thumbnails-a .trc_rbox_header .logoDiv {
+        font-size: inherit;
+        line-height: normal;
+}
+
+.thumbnails-a .logoDiv a {
+    font-size: 100%;
+}
+
+.thumbnails-a .logoDiv a span {
+    display: inline;
+    color: #000000;
+    font-weight: normal;
+    font-size: 11.0px;
+}
+
+.thumbnails-a .videoCube a {
+    padding: 0;
+}
+
+.thumbnails-a .thumbBlock {
+    margin: 0;
+}
+
+.trc_elastic .thumbnails-a .video-label-box {
+    height: 76.0px;
+}
+
+.thumbnails-a .videoCube .video-label-box {
+    margin-top: 5px;
+}
+
+.thumbnails-a .videoCube .video-label-box .video-title {
+    text-decoration: none;
+    margin: 0;
+}
+
+.thumbnails-a .videoCube:hover .video-label-box .video-title {
+    text-decoration: underline;
+}
+
+.thumbnails-a .video-label-box .branding {
+    display: block;
+}
+
+.thumbnails-a .syndicatedItem .branding {
+    line-height: 19.0px;
+}
+.thumbnails-a .trc_header_left_column {
+	width: 48%;
+	display: inline-block;
+	background: transparent;
+	height: auto;
+}
+
+.thumbnails-a .trc_rbox_header .logoDiv a {
+	font-size: 100%;
+}
+
+.thumbnails-a .trc_rbox_header .trc_header_ext {
+	position: relative;
+	top: auto;
+	right: auto;
+}
+
+.thumbnails-a [class*=span] {
+	float: none;
+}
+
+.thumbnails-a [class*=span] {
+	margin-left: 0;
+}
+
+.thumbnails-a [class*=span] {
+	float: none;
+}
+
+.thumbnails-a [class*=span] {
+	margin-left: 0;
+}
+.thumbnails-b img {
+        max-width: none;
+}
+
+/* override bootstrap default span definitions */
+.thumbnails-b [class*=span] {
+    float:none;
+    margin-left:0px;
+}
+
+
+.thumbnails-b .trc_rbox_header {
+        line-height: 1.2em;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+	background: transparent;
+	height: auto;
+}
+
+.thumbnails-b .trc_rbox_header_span .trc_header_right_column {
+        display: none;
+	background: transparent;
+	height: auto;
+}
+
+.thumbnails-b .trc_rbox_header .logoDiv {
+        font-size: inherit;
+        line-height: normal;
+}
+
+.thumbnails-b .logoDiv a {
+    font-size: 100%;
+}
+
+.thumbnails-b .logoDiv a span {
+    display: inline;
+    color: #000000;
+    font-weight: normal;
+    font-size: 11.0px;
+}
+
+.thumbnails-b .videoCube a {
+    padding: 0;
+}
+
+.thumbnails-b .thumbBlock {
+    margin: 0;
+}
+
+.trc_elastic .thumbnails-b .video-label-box {
+    height: 76.0px;
+}
+
+.thumbnails-b .videoCube .video-label-box {
+    margin-top: 5px;
+}
+
+.thumbnails-b .videoCube .video-label-box .video-title {
+    text-decoration: none;
+    margin: 0;
+}
+
+.thumbnails-b .videoCube:hover .video-label-box .video-title {
+    text-decoration: underline;
+}
+
+.thumbnails-b .video-label-box .branding {
+    display: block;
+}
+
+.thumbnails-b .syndicatedItem .branding {
+    line-height: 19.0px;
+}
+.thumbnails-b .trc_header_left_column {
+	width: 48%;
+	display: inline-block;
+	background: transparent;
+	height: auto;
+}
+
+.thumbnails-b .trc_rbox_header .logoDiv a {
+	font-size: 100%;
+}
+
+.thumbnails-b .trc_rbox_header .trc_header_ext {
+	position: relative;
+	top: auto;
+	right: auto;
+}
+</style><style type="text/css" id="css_sovrn_ad_728_90">.sovrn_ad_728_90{display:inline-block !important;visibility: visible !important;opacity:1 !important;vertical-align:top;position:relative;width:728px !important;height:90px !important;z-index:999999 !important; overflow:hidden}.sovrn_banner_ins{display:none;border:none;margin:0;padding:0;position:relative;visibility:visible;text-decoration:none;background-color:transparent;}</style><script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/b0854e1fecc3daddbadcd6244250df24.js" async="true" type="text/javascript"></script><style type="text/css">.kmn-div{border:none;padding:0;background:transparent;position:relative;display:inline-block;}.kmn-lbl,.kmn-lbl:hover{color:black;font-size:9px;font-family:Verdana;position:absolute;right:1px;bottom:-14px;padding:1px;text-decoration:none;}</style><script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/secureAnonymousFramework"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow-x:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://m-static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><style type="text/css">@media screen and (min-width: 0px) and (max-width: 466px) {.trc_elastic_trc_38156 .trc_rbox_outer .videoCube .video-label-box {height:auto;}.trc_elastic_trc_38156 .trc_rbox_outer .videoCube {margin-bottom:10px;}.trc_elastic_trc_38156 .trc_rbox_outer{margin-left:-2%;}.trc_elastic_trc_38156 .videoCube_aspect{padding-bottom:50%; width: 100%;}.trc_elastic_trc_38156 .videoCube{width: 97.99%; position: relative; float: left; margin: 0 0 2% 2%;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(-n+4){display:block;visibility:visible;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(n+5){display:none;visibility:hidden;}} @media screen and (min-width: 467px) and (max-width: 736px) {.trc_elastic_trc_38156 .trc_rbox_outer{margin-left:-2%;}.trc_elastic_trc_38156 .videoCube_aspect{padding-bottom:83.33333333333334%; width: 100%;}.trc_elastic_trc_38156 .videoCube{width: 31.33%; position: relative; float: left; margin: 0 0 2% 2%;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(-n+6){display:block;visibility:visible;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(n+7){display:none;visibility:hidden;}} @media screen and (min-width: 737px) and (max-width: 980px) {.trc_elastic_trc_38156 .trc_rbox_outer{margin-left:-2%;}.trc_elastic_trc_38156 .videoCube_aspect{padding-bottom:83.33333333333334%; width: 100%;}.trc_elastic_trc_38156 .videoCube{width: 22.9975%; position: relative; float: left; margin: 0 0 2% 2%;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(-n+8){display:block;visibility:visible;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(n+9){display:none;visibility:hidden;}} @media screen and (min-width: 981px) {.trc_elastic_trc_38156 .trc_rbox_outer{margin-left:-2%;}.trc_elastic_trc_38156 .videoCube_aspect{padding-bottom:83.33333333333334%; width: 100%;}.trc_elastic_trc_38156 .videoCube{width: 31.33%; position: relative; float: left; margin: 0 0 2% 2%;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(-n+6){display:block;visibility:visible;}.trc_elastic_trc_38156 div.videoCube:nth-of-type(n+7){display:none;visibility:hidden;}} </style><style type="text/css">.trc_popover_aug_container { position: static;}#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover {position: absolute; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 16px; color: #000000; cursor: default; position: absolute; top: 0; right: 0; z-index: 12000; width: 180px; padding: 1px; text-align: left; white-space: normal; background-color: #ffffff; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;-moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;}#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover iframe{width: 100%;}#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover .trc_popover_arrow, .trc_popover .trc_popover_arrow:after { position: absolute; display: block; width: 0; height: 0; border-color: transparent; border-style: solid; }#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover .trc_popover_arrow { border-width: 11px; }#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover .trc_popover_arrow:after { border-width: 10px; content: "";}#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover.trc_bottom { margin-top: 10px; }#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover.trc_bottom .trc_popover_arrow { top: -11px; right: 11px; margin-left: -11px; border-bottom-color: #999; border-bottom-color: rgba(0, 0, 0, 0.25); border-top-width: 0; }#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover.trc_bottom .trc_popover_arrow:after { top: 1px; margin-left: -10px; border-bottom-color: #ffffff; border-top-width: 0; }#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover_fade.trc_in { visibility: visible; opacity: 1; filter: alpha(opacity=100); transition-delay: 0s, 0s; -moz-transition-delay: 0s, 0s; -webkit-transition-delay: 0s, 0s; -o-transition-delay: 0s, 0s; -ms-transition-delay: 0s, 0s;}#tbl-aug-aegp2j #tbl-aug-sqrur5 #tbl-aug-87xifw .trc_popover_fade { visibility: hidden; opacity: 0; filter: alpha(opacity=0); transition: opacity 500ms 0s, visibility 0s 500ms; -webkit-transition: opacity 500ms 0s, visibility 0s 500ms;  -moz-transition: opacity 500ms 0s, visibility 0s 500ms; -o-transition: opacity 500ms 0s, visibility 0s 500ms; -ms-transition: opacity 500ms 0s, visibility 0s 500ms;}</style><style type="text/css">@media screen and (min-width: 0px) {.trc_elastic_trc_18164 .trc_rbox_outer .videoCube .video-label-box {height:auto;}.trc_elastic_trc_18164 .trc_rbox_outer .videoCube {margin-bottom:10px;}.trc_elastic_trc_18164 .trc_rbox_outer{margin-left:-2%;}.trc_elastic_trc_18164 .videoCube_aspect{padding-bottom:50%; width: 100%;}.trc_elastic_trc_18164 .videoCube{width: 97.99%; position: relative; float: left; margin: 0 0 2% 2%;}.trc_elastic_trc_18164 div.videoCube:nth-of-type(-n+4){display:block;visibility:visible;}.trc_elastic_trc_18164 div.videoCube:nth-of-type(n+5){display:none;visibility:hidden;}} </style></head><body class="single single-post postid-7654 single-format-standard custom-background cc-responsive"><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_http" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/44OwK74u0Ie.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_https" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/44OwK74u0Ie(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=139987706155608";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/platform.js" async="" defer="" gapi_processed="true"></script>
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u) {
+    e.async = 1;
+    e.src = u;
+    f.parentNode.insertBefore(e, f);
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  'http://cdn.taboola.com/libtrc/sanfoundry/loader.js');
+</script>
+	<style type="text/css">
+		body {
+		background-color: #f7f7f7;background-image: none;		}
+	</style>
+	
+
+<!-- WordPress Facebook Open Graph protocol plugin (WPFBOGP v2.0.7) http://rynoweb.com/wordpress-plugins/ -->
+<meta property="fb:admins" content="1407610457">
+<meta property="fb:app_id" content="139987706155608">
+<meta property="og:url" content="http://www.sanfoundry.com/c-program-quick-sort-recursion/">
+<meta property="og:title" content="C Program to Perform Quick Sort on a set of Entries from a File using Recursion">
+<meta property="og:site_name" content="Sanfoundry">
+<meta property="og:description" content=" The following C program, using recursion, performs quick sort. A quick sort is a sorting algorithm with complexity of O(nlogn). It is used for sorting numbers">
+<meta property="og:type" content="article">
+<meta property="og:image" content="http://www.sanfoundry.com/wp-content/uploads/2014/08/C-Programming-1000-Programs.png">
+<meta property="og:image" content="http://www.sanfoundry.com/wp-content/uploads/2013/10/facebook-285x287-final.png">
+<meta property="og:locale" content="en_us">
+<!-- // end wpfbogp -->
+
+		<style type="text/css" media="all">
+						body {
+			 font-size : 14px;
+			 font-family : Arial, Helvetica, sans-serif;
+			 font-weight : normal;
+						}
+
+												.container {
+			 max-width : 1020px;
+						}
+
+			
+						h1, h2, h3, h4, h5, h6 {
+			font-family : Arial, Helvetica, sans-serif;
+						}
+
+			
+		</style>
+		<script type="text/javascript">  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-25734021-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+	
+<!-- ******************* Top Header ******************** -->
+
+<!-- ********************** Header ******************** -->
+
+<div id="header_section" class="container-full-width">
+	
+	<div class="container">
+		
+				
+			<div class="container-fluid">	
+				
+					<header id="cc-header" class="row-fluid">
+		<div id="banner">
+							<a href="http://www.sanfoundry.com/"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/sanfoundry-header-1020x90-2.png" alt="logo"></a>
+								</div>
+	</header>
+			
+			</div><!-- container fluid -->
+	
+	</div><!-- container -->
+
+</div><!-- container full width -->
+	
+
+<!-- ******************** Menu *********************** -->
+
+<div class="container-full-width" id="main_navigation">
+	<div class="container">
+		<div class="container-fluid">
+			<nav id="navigation" role="navigation">
+		      <div class="main-navigation navbar navbar-inverse">
+		        <div class="navbar-inner">
+		        	<div class="container">
+		          			  					<div class="nav-collapse collapse">
+		            		          		<div class="menu-headermenu-container"><ul id="menu-headermenu" class="nav"><li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-117"><a href="http://www.sanfoundry.com/">Home</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-311"><a href="http://www.sanfoundry.com/about/">About</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-313"><a href="http://www.sanfoundry.com/coursesfees/">Courses | Fees | Dates</a></li>
+<li id="menu-item-54940" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54940"><a href="http://www.sanfoundry.com/college-projects-engineering/">College-Projects</a></li>
+<li id="menu-item-72932" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72932"><a href="http://www.sanfoundry.com/testimonials/">Testimonials</a></li>
+<li id="menu-item-54941" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54941"><a href="http://www.sanfoundry.com/internship/">Internship</a></li>
+<li id="menu-item-819" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-819"><a href="http://www.sanfoundry.com/salary-50l/">Developers</a></li>
+<li id="menu-item-59593" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59593"><a href="http://www.sanfoundry.com/jobs/">Jobs</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-317"><a href="http://www.sanfoundry.com/contact/">Contact</a></li>
+</ul></div>					
+															      
+						      									</div><!-- collapse -->
+									
+						            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+						            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						              <span class="icon-bar"></span>
+						              <span class="icon-bar"></span>
+						              <span class="icon-bar"></span>
+						            </a>
+						      		          </div><!-- container -->
+		        </div><!-- .navbar-inner .row-fluid -->
+		      </div><!-- main-navigation navbar -->
+			</nav><!-- #navigation -->
+		</div><!-- container fluid -->
+	</div><!-- container -->
+</div><!-- container full width -->
+	
+	
+<div id="single_page" class="container-full-width" style="visibility: visible; opacity: 1;">
+	
+	<div class="container" style="visibility: visible; opacity: 1;">
+		
+		<div class="container-fluid" style="visibility: visible; opacity: 1;">
+		
+			<div style="height: 115px; margin-top: 5px; margin-bottom: 0px; text-align: center; border: 1px solid rgb(229, 229, 229); visibility: visible; opacity: 1;">
+<div style="height: 15px; text-align: center; margin-bottom: 5px;">advertisements</div>
+<div style="height: 90px; visibility: visible; opacity: 1;">
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/fp"></script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/adcfg"></script><div id="sovrn_ad_unit_303987" data-tid="6acc421865ce44399b24780fea7d989255bbe8e0" data-zid="303987" class="sovrn_ad_728_90 sovrn_ad_unit" style="display: block; visibility: visible; opacity: 1;">
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/addelivery"></script><!-- [sovrn] Banner (303987 / 6acc421865ce44399b24780fea7d989255bbe8e0 / 43627 / 1828) -->
+<ins class="sovrn_banner_ins _6acc421865ce44399b24780fea7d989255bbe8e0" id="sovrn_banner_6acc421865ce44399b24780fea7d989255bbe8e0_43627_1828" style="display: none;">
+<script type="text/javascript">
+if (!window.OX_ads) { OX_ads = []; }
+OX_ads.push({ "auid" : "536471" });
+</script>
+<script type="text/javascript">
+document.write('<scr'+'ipt src="http://us-ads.openx.net/w/1.0/jstag"><\/scr'+'ipt>');
+</script><script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/jstag"></script><script type="text/javascript" id="ox_acj_2012357185" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/acj"></script><iframe src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/pd.html" width="0" height="0" style="display:none;"></iframe><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/pb.js"></script></ins>
+<!-- [sovrn] Banner (303987 / 6acc421865ce44399b24780fea7d989255bbe8e0 / 94071 / 232) -->
+<ins class="sovrn_banner_ins _6acc421865ce44399b24780fea7d989255bbe8e0" id="sovrn_banner_6acc421865ce44399b24780fea7d989255bbe8e0_94071_232" style="display: block;">
+<script type="text/javascript">
+    kmn_placement = 'b0854e1fecc3daddbadcd6244250df24';
+</script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/kmn_sa.js"></script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/b0854e1fecc3daddbadcd6244250df24(1).js"></script><div id="kmn_tag_b0854e1fecc3daddbadcd6244250df24" class="kmn-div" style="width: 728px; height: 90px;"><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/ADTECH"></script><script type="text/javascript">var pubId=51048,siteId=107230,kadId=362824,kadtype=1,kadwidth=728,kadheight=90,kadpageurl='http%3A%2F%2Fsanfoundry.com';</script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/showad.js"></script><iframe frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" scrolling="no" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/showad.html"></iframe><iframe frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" scrolling="no" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/showad(2).html" onload="PubMatic.ifl(this,0)"></iframe><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/AdServerServlet" onload="PubMatic.tags[0].jsl();"></script><span class="PubAdAI"><script type="text/javascript">if(typeof(kmn_sa)!=='undefined')kmn_sa.get_np('b0854e1fecc3daddbadcd6244250df24');else document.write('<scr'+'ipt src="http://s.komoona.com/passback/np/b0854e1fecc3daddbadcd6244250df24.js" type="text/javascript"></scr'+'ipt>');</script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/getjs.aspx"></script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/getjs.static.js"></script><div id="cw_td_51535517" style="height: 0px; width: 0px; display: none;"></div><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/GetAd.aspx"></script><div id="dv_pp_2LbSH6Y89eM2"><script language="JavaScript1.1" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/adj"></script><div class="GoogleActiveViewClass" id="DfaVisibilityIdentifier_911604044"><a target="_blank" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvwnXkJf_X_sfF4vOUSnNTIpYRQYJfTxkrxaZ2e9XkbfJB6WgGXS4x3UsGUtuQsWmlbfwgNuG9ih7YULPGO6zPfhV3cTYGVWk2MfqvI5A-a32Ndxi1vYEoGExj6UGzcOgk-d9Szuqp3Js3ua5K-2A&sig=Cg0ArKJSzOuVbUvnODFg&adurl=http://www.trendin.com/sale-71%3Ffp%255B%255D%3Dcategory_fq%253AFootwear%26orderby%3Dpopular%26orderway%3Dasc%26latestfilter%3Dcategory_fq%253AFootwear%26source%3Dmenu%26utm_source%3DDBM%26utm_medium%3Dcpc%26utm_campaign%3Dupto50Footwear%26dclid%3D%25edclid!"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/150-728x90.jpg" alt="Advertisement" border="0" width="728" height="90"></a></div><noscript>&lt;A HREF="<a class="vglnk" href="https://bid.g.doubleclick.net/xbbe/creative/jump?d=APEucNUaBcnYjwf1KkrrojKftR-hq5inUbV_k8D_x-087XauJzdDLrQM9XF_VLDTHvgvWDe4c2CEnXI3Qsy2KklgMNTCVlaLSev7K8HdEEIPirDPaByXd-InlZmoUlL1DWv0ZW5bOM-E9ko4X687JxkUt9kp10SMxSpryUfNi-9Sxrzs6zC4BRSU58EhqYOUJAYuuFBPTt0yHv6TzLvuGNdRHEZcJBVoKJy58-9JTc_Z2Mi5rqwgpVYdnKY3qkP3z-wNLGdop5F2ld_2rFVgAHxhdlgIpWMFJzVlu-U1O4RamSxebW8V3yN97eBcfgdaJljhxqMN3r2AzARUu2Jp0qKdeqKOiOt5VdXFuVjMqxdWTydm_Pl0GsmZ9u3GoCPdHBYCerAwR_PlisMbGl4htwodQVR1-CCUmA" rel="nofollow"><span>https</span><span>://</span><span>bid</span><span>.</span><span>g</span><span>.</span><span>doubleclick</span><span>.</span><span>net</span><span>/</span><span>xbbe</span><span>/</span><span>creative</span><span>/</span><span>jump</span><span>?</span><span>d</span><span>=</span><span>APEucNUaBcnYjwf1KkrrojKftR</span><span>-</span><span>hq5inUbV</span><span>_</span><span>k8D</span><span>_</span><span>x</span><span>-</span><span>087XauJzdDLrQM9XF</span><span>_</span><span>VLDTHvgvWDe4c2CEnXI3Qsy2KklgMNTCVlaLSev7K8HdEEIPirDPaByXd</span><span>-</span><span>InlZmoUlL1DWv0ZW5bOM</span><span>-</span><span>E9ko4X687JxkUt9kp10SMxSpryUfNi</span><span>-</span><span>9Sxrzs6zC4BRSU58EhqYOUJAYuuFBPTt0yHv6TzLvuGNdRHEZcJBVoKJy58</span><span>-</span><span>9JTc</span><span>_</span><span>Z2Mi5rqwgpVYdnKY3qkP3z</span><span>-</span><span>wNLGdop5F2ld</span><span>_</span><span>2rFVgAHxhdlgIpWMFJzVlu</span><span>-</span><span>U1O4RamSxebW8V3yN97eBcfgdaJljhxqMN3r2AzARUu2Jp0qKdeqKOiOt5VdXFuVjMqxdWTydm</span><span>_</span><span>Pl0GsmZ9u3GoCPdHBYCerAwR</span><span>_</span><span>PlisMbGl4htwodQVR1</span><span>-</span><span>CCUmA</span></a>"&gt;&lt;IMG SRC="<a class="vglnk" href="https://bid.g.doubleclick.net/xbbe/creative/ad?d=APEucNUaBcnYjwf1KkrrojKftR-hq5inUbV_k8D_x-087XauJzdDLrQM9XF_VLDTHvgvWDe4c2CEnXI3Qsy2KklgMNTCVlaLSev7K8HdEEIPirDPaByXd-InlZmoUlL1DWv0ZW5bOM-E9ko4X687JxkUt9kp10SMxSpryUfNi-9Sxrzs6zC4BRSU58EhqYOUJAYuuFBPTt0yHv6TzLvuGNdRHEZcJBVoKJy58-9JTc_Z2Mi5rqwgpVYdnKY3qkP3z-wNLGdop5F2ld_2rFVgAHxhdlgIpWMFJzVlu-U1O4RamSxebW8V3yN97eBcfgdaJljhxqMN3r2AzARUu2Jp0qKdeqKOiOt5VdXFuVjMqxdWTydm_Pl0GsmZ9u3GoCPdHBYCerAwR_PlisMbGl4htwodQVR1-CCUmA&pr=VfQcOwALx6BIHfrctbDZtuGzvvo7urzA4NhN3Q" rel="nofollow"><span>https</span><span>://</span><span>bid</span><span>.</span><span>g</span><span>.</span><span>doubleclick</span><span>.</span><span>net</span><span>/</span><span>xbbe</span><span>/</span><span>creative</span><span>/</span><span>ad</span><span>?</span><span>d</span><span>=</span><span>APEucNUaBcnYjwf1KkrrojKftR</span><span>-</span><span>hq5inUbV</span><span>_</span><span>k8D</span><span>_</span><span>x</span><span>-</span><span>087XauJzdDLrQM9XF</span><span>_</span><span>VLDTHvgvWDe4c2CEnXI3Qsy2KklgMNTCVlaLSev7K8HdEEIPirDPaByXd</span><span>-</span><span>InlZmoUlL1DWv0ZW5bOM</span><span>-</span><span>E9ko4X687JxkUt9kp10SMxSpryUfNi</span><span>-</span><span>9Sxrzs6zC4BRSU58EhqYOUJAYuuFBPTt0yHv6TzLvuGNdRHEZcJBVoKJy58</span><span>-</span><span>9JTc</span><span>_</span><span>Z2Mi5rqwgpVYdnKY3qkP3z</span><span>-</span><span>wNLGdop5F2ld</span><span>_</span><span>2rFVgAHxhdlgIpWMFJzVlu</span><span>-</span><span>U1O4RamSxebW8V3yN97eBcfgdaJljhxqMN3r2AzARUu2Jp0qKdeqKOiOt5VdXFuVjMqxdWTydm</span><span>_</span><span>Pl0GsmZ9u3GoCPdHBYCerAwR</span><span>_</span><span>PlisMbGl4htwodQVR1</span><span>-</span><span>CCUmA</span><span>&amp;</span><span>pr</span><span>=</span><span>VfQcOwALx6BIHfrctbDZtuGzvvo7urzA4NhN3Q</span></a>" BORDER=0 WIDTH=728 HEIGHT=90 ALT="Advertisement"&gt;&lt;/A&gt;</noscript><iframe src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/pixel(1).html" style="display:none"></iframe><div style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/beacon" border="0" width="1" height="1" alt="" style="display:none"></div></div><div style="display:none;width:0;height:0"><iframe src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/p-01-0VIaSjnOLg.gif" height="0" width="0" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" scrolling="NO"></iframe></div><script>var pp_iv_ctx={ adSlotId: 'dv_pp_2LbSH6Y89eM2', logEndpoint: '//bh.contextweb.com/bh/iv', context: {ig: '2LbSH6Y89eM2', t: '299856', pg: 'http://www.sanfoundry.com/c-program-quick-sort-recursion/', fl: '0', sz: '4', esid: '', tl: '1', ccid: '834979'}};if(typeof(window.pp)=='undefined'){pp = {};}if(typeof(window.pp.inview)=='undefined'){document.write("<scr" + "ipt type=\"text/javascript\" src=\"//ads.contextweb.com/TagPublish/js/iv.static.js\"></scr" + "ipt>");} else { new pp.inview(pp_iv_ctx).initialize(); }</script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/iv.static.js"></script><div style="display:none;width:0;height:0"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/it" border="0" height="1" width="1"></div>
+
+<iframe name="pbeacon" frameborder="0" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" scrolling="no" width="0" height="0" style="position:absolute;top:-20000px;" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/AdDisplayTrackerServlet.html"> </iframe><iframe name="pbeacon" frameborder="0" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" scrolling="no" width="0" height="0" style="position:absolute;top:-20000px;" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/showad(1).html"> </iframe><!-- PubMatic Ad Ends --></span><iframe src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/usermatch.html" width="1" height="1" style="display: none"></iframe><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/mapuser" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/match" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/saved_resource(1)" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/generic" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/hbpix" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/aol" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/getuid" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/pixel" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/activity" width="1" height="1" style="display:none;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/img" width="1" height="1" style="display:none;"><iframe src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/pixel.html" width="1" height="1" style="display: none"></iframe><a id="lbl_b0854e1fecc3daddbadcd6244250df24" class="kmn-lbl" target="_blank" href="http://www.komoona.com/">Optimized by Komoona</a></div>
+<div style="position:absolute;left:0px;top:0px;visibility:hidden;"><img src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/ri"></div>
+<script type="text/javascript">sovrn.ads.chainLG();</script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/containertag"></script>
+
+</ins>
+</div>
+
+
+</div>
+</div>
+				
+			<div id="container" class="row-fluid" style="visibility: visible; opacity: 1;">
+				
+				
+<div id="secondary" class="widget-area span3">
+	
+		
+	<div id="sidebar">
+	<aside id="text-103" class="widget-container widget_text">			<div class="textwidget"><h3 class="sf-widget-title">Questions &amp; Answers</h3>
+<div class="sf-postw-category">
+<a href="http://www.sanfoundry.com/c-interview-questions-answers/">C Interview Questions</a><br>
+<a href="http://www.sanfoundry.com/cplusplus-interview-questions-answers/">C++ Questions</a><br>
+<a href="http://www.sanfoundry.com/technical-interview-questions/">Linux MCQs</a><br>
+<a href="http://www.sanfoundry.com/csharp-questions-answers/">C# Quiz</a><br>
+<a href="http://www.sanfoundry.com/java-questions-answers-freshers-experienced/">Java MCQs</a><br>
+<a href="http://www.sanfoundry.com/javascript-questions-answers/">JavaScript MCQs</a><br>
+<a href="http://www.sanfoundry.com/san-storage-mcqs-freshers-experienced/">SAN Questions</a><br>
+<a href="http://www.sanfoundry.com/php-questions-answers/">PHP Questions</a><br>
+<a href="http://www.sanfoundry.com/1000-python-questions-answers/">Python Quiz</a><br>
+<br>
+</div>
+
+<h3 class="sf-widget-title">Computer Science Questions</h3>
+<div class="sf-postw-category">
+<a href="http://www.sanfoundry.com/operating-system-questions-answers/">Operating System Quiz</a><br>
+<a href="http://www.sanfoundry.com/computer-organization-architecture-questions-answers/">Computer Architecture MCQs</a><br>
+<a href="http://www.sanfoundry.com/software-architecture-design-questions-answers/">Software Architecture MCQs</a><br>
+<a href="http://www.sanfoundry.com/software-engineering-questions-answers/">Software Engineering MCQs</a><br>
+<a href="http://www.sanfoundry.com/artificial-intelligence-questions-answers/">Artificial Intelligence MCQs</a><br>
+<a href="http://www.sanfoundry.com/lisp-programming-questions-answers/">LISP Programming MCQs</a><br>
+<a href="http://www.sanfoundry.com/database-management-system-questions-answers/">Database Management MCQs</a><br>
+<a href="http://www.sanfoundry.com/computer-network-questions-answers/">Computer Network MCQs</a><br>
+<a href="http://www.sanfoundry.com/microprocessors-questions-answers/">Microprocessor MCQs</a><br>
+<br>
+</div>
+
+<h3 class="sf-widget-title">C Programming Examples</h3>
+<div class="sf-postw-category">
+<a href="http://www.sanfoundry.com/simple-c-programs/">Simple C Programs</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-arrays/">C - Arrays</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-matrix/">C - Matrix</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-strings/">C - Strings</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-bitwise-operations/">C - Bitwise Operations</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-linked-list/">C - Linked Lists</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-stacks/">C - Stacks &amp; Queues</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-searching-sorting/">C - Searching &amp; Sorting</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-on-trees/">C - Trees</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-strings/">C - Strings</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-file-handling/">C - File Handling</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-mathematical-functions/">C - Mathematical Functions</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-on-puzzles-games/">C - Puzzles &amp; Games</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-recursion/">C Programs - Recursion</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-without-using-recursion/">C Programs - No Recursion</a><br>
+<br>
+</div>
+
+<h3 class="sf-widget-title">Java Algorithms</h3>
+<div class="sf-postw-category">
+<a href="http://www.sanfoundry.com/java-programming-examples-numerical-problems-algorithms/">Java - Numerical Problems</a><br>
+<a href="http://www.sanfoundry.com/java-programming-examples-combinatorial-problems-algorithms/">Java - Combinatorial Problems</a><br>
+<a href="http://www.sanfoundry.com/java-programming-examples-graph-problems-algorithms/">Java - Graph Problems</a><br>
+<a href="http://www.sanfoundry.com/java-programming-examples-hard-graph-problems-algorithms/">Java - Hard Graph Problems</a><br>
+<a href="http://www.sanfoundry.com/java-programming-examples-computational-geometry-problems-algorithms/">Java - Computation Geometry</a><br>
+<a href="http://www.sanfoundry.com/java-programming-examples-set-string-problems-algorithms/">Java - Sets &amp; Strings</a><br>
+<a href="http://www.sanfoundry.com/java-programming-examples-data-structures/">Java - Data-Structures</a><br>
+<a href="http://www.sanfoundry.com/java-programming-examples-collection-api/">Java - Collection API Problems</a><br>
+<br>
+</div>
+
+<h3 class="sf-widget-title">C++ Algorithms</h3>
+<div class="sf-postw-category">
+<a href="http://www.sanfoundry.com/cpp-programming-examples-numerical-problems-algorithms/">C++ - Numerical Problems</a><br>
+<a href="http://www.sanfoundry.com/cpp-programming-examples-combinatorial-problems-algorithms/">C++ - Combinatorial Problems</a><br>
+<a href="http://www.sanfoundry.com/cpp-programming-examples-graph-problems-algorithms/">C++ - Graph Problems</a><br>
+<a href="http://www.sanfoundry.com/cpp-programming-examples-hard-graph-problems-algorithms/">C++ - Hard Graph Problems</a><br>
+<a href="http://www.sanfoundry.com/cpp-programming-examples-computational-geometry-problems-algorithms/">C++ - Computation Geometry</a><br>
+<a href="http://www.sanfoundry.com/cpp-programming-examples-set-string-problems-algorithms/">C++ - Sets &amp; Strings</a><br>
+<a href="http://www.sanfoundry.com/cpp-programming-examples-data-structures/">C++ - Data-Structures</a><br>
+<a href="http://www.sanfoundry.com/cpp-programming-examples-stl/">C++ - STL Library</a><br>
+<br>
+</div>
+
+<h3 class="sf-widget-title">C Algorithms</h3>
+<div class="sf-postw-category">
+<a href="http://www.sanfoundry.com/c-programming-examples-numerical-problems-algorithms/">C - Numerical Problems</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-combinatorial-problems-algorithms/">C - Combinatorial Problems</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-graph-problems-algorithms/">C - Graph Problems</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-hard-graph-problems-algorithms/">C - Hard Graph Problems</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-computational-geometry-problems-algorithms/">C - Computation Geometry</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-set-string-problems-algorithms/">C - Sets &amp; Strings</a><br>
+<a href="http://www.sanfoundry.com/c-programming-examples-data-structures/">C - Data-Structures</a><br>
+<br>
+</div></div>
+		</aside>	</div><!-- #sidebar -->
+	
+		
+</div><!-- #secondary .widget-area .span3 -->				
+				<div id="content" class=" span6 content-sidebar-2" style="visibility: visible; opacity: 1;">
+					
+										
+								
+						
+<article id="post-7654" class="post-7654 post type-post status-publish format-standard hentry category-c-program-recursion category-c-programs-all" style="visibility: visible; opacity: 1;">
+	
+	<header class="entry-header">
+		
+		<h1 class="entry-title">						C Program to Perform Quick Sort on a set of Entries from a File using Recursion		</h1>			<div class="entry-meta">
+							</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+  
+	  
+		<div class="entry-content" style="visibility: visible; opacity: 1;">
+    				<div style="text-align:justify">
+The following C program, using recursion, performs quick sort. A quick sort is a sorting algorithm with complexity of O(nlogn). It is used for sorting numbers, structure, files.<p></p>
+<p>Here is the source code of the C program to display a linked list in reverse. The C program is successfully compiled and run on a Linux system. The program output is also shown below.
+</p></div>
+
+
+<div class="hk1_style-wrap5"><div class="hk1_style-wrap4"><div class="hk1_style-wrap3"><div class="hk1_style-wrap2"><div class="hk1_style-wrap"><div class="hk1_style"><div class="c"><ol><li class="li1"><pre class="de1"><span class="coMULTI">/*</span></pre></li><li class="li1"><pre class="de1"><span class="coMULTI">* C Program to Perform Quick Sort on a set of Entries from a File </span></pre></li><li class="li1"><pre class="de1"><span class="coMULTI">* using Recursion</span></pre></li><li class="li1"><pre class="de1"><span class="coMULTI">*/</span></pre></li><li class="li1"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="kw4">void</span> quicksort <span class="br0">(</span><span class="kw4">int</span> <span class="br0">[</span><span class="br0">]</span><span class="sy0">,</span> <span class="kw4">int</span><span class="sy0">,</span> <span class="kw4">int</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span></pre></li><li class="li1"><pre class="de1"><span class="br0">{</span></pre></li><li class="li1"><pre class="de1">    <span class="kw4">int</span> list<span class="br0">[</span><span class="nu0">50</span><span class="br0">]</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="kw4">int</span> size<span class="sy0">,</span> i<span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1">    <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"Enter the number of elements: "</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="kw3">scanf</span><span class="br0">(</span><span class="st0">"%d"</span><span class="sy0">,</span> <span class="sy0">&amp;</span>size<span class="br0">)</span><span class="sy0">;</span> </pre></li><li class="li1"><pre class="de1">    <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"Enter the elements to be sorted:<span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="kw1">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> size<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span></pre></li><li class="li1"><pre class="de1">    <span class="br0">{</span></pre></li><li class="li1"><pre class="de1">        <span class="kw3">scanf</span><span class="br0">(</span><span class="st0">"%d"</span><span class="sy0">,</span> <span class="sy0">&amp;</span>list<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="br0">}</span> </pre></li><li class="li1"><pre class="de1">    quicksort<span class="br0">(</span>list<span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> size <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"After applying quick sort<span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="kw1">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> size<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span></pre></li><li class="li1"><pre class="de1">    <span class="br0">{</span></pre></li><li class="li1"><pre class="de1">        <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"%d "</span><span class="sy0">,</span> list<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="br0">}</span></pre></li><li class="li1"><pre class="de1">    <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"<span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1">    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1"><span class="br0">}</span></pre></li><li class="li1"><pre class="de1"><span class="kw4">void</span> quicksort<span class="br0">(</span><span class="kw4">int</span> list<span class="br0">[</span><span class="br0">]</span><span class="sy0">,</span> <span class="kw4">int</span> low<span class="sy0">,</span> <span class="kw4">int</span> high<span class="br0">)</span></pre></li><li class="li1"><pre class="de1"><span class="br0">{</span></pre></li><li class="li1"><pre class="de1">    <span class="kw4">int</span> pivot<span class="sy0">,</span> i<span class="sy0">,</span> j<span class="sy0">,</span> temp<span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="kw1">if</span> <span class="br0">(</span>low <span class="sy0">&lt;</span> high<span class="br0">)</span></pre></li><li class="li1"><pre class="de1">    <span class="br0">{</span></pre></li><li class="li1"><pre class="de1">        pivot <span class="sy0">=</span> low<span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">        i <span class="sy0">=</span> low<span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">        j <span class="sy0">=</span> high<span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">        <span class="kw1">while</span> <span class="br0">(</span>i <span class="sy0">&lt;</span> j<span class="br0">)</span> </pre></li><li class="li1"><pre class="de1">        <span class="br0">{</span></pre></li><li class="li1"><pre class="de1">            <span class="kw1">while</span> <span class="br0">(</span>list<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">&lt;=</span> list<span class="br0">[</span>pivot<span class="br0">]</span> <span class="sy0">&amp;&amp;</span> i <span class="sy0">&lt;=</span> high<span class="br0">)</span></pre></li><li class="li1"><pre class="de1">            <span class="br0">{</span></pre></li><li class="li1"><pre class="de1">                i<span class="sy0">++;</span></pre></li><li class="li1"><pre class="de1">            <span class="br0">}</span></pre></li><li class="li1"><pre class="de1">            <span class="kw1">while</span> <span class="br0">(</span>list<span class="br0">[</span>j<span class="br0">]</span> <span class="sy0">&gt;</span> list<span class="br0">[</span>pivot<span class="br0">]</span> <span class="sy0">&amp;&amp;</span> j <span class="sy0">&gt;=</span> low<span class="br0">)</span></pre></li><li class="li1"><pre class="de1">            <span class="br0">{</span></pre></li><li class="li1"><pre class="de1">                j<span class="sy0">--;</span></pre></li><li class="li1"><pre class="de1">            <span class="br0">}</span></pre></li><li class="li1"><pre class="de1">            <span class="kw1">if</span> <span class="br0">(</span>i <span class="sy0">&lt;</span> j<span class="br0">)</span></pre></li><li class="li1"><pre class="de1">            <span class="br0">{</span></pre></li><li class="li1"><pre class="de1">                temp <span class="sy0">=</span> list<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">                list<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> list<span class="br0">[</span>j<span class="br0">]</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">                list<span class="br0">[</span>j<span class="br0">]</span> <span class="sy0">=</span> temp<span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">            <span class="br0">}</span></pre></li><li class="li1"><pre class="de1">        <span class="br0">}</span></pre></li><li class="li1"><pre class="de1">        temp <span class="sy0">=</span> list<span class="br0">[</span>j<span class="br0">]</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">        list<span class="br0">[</span>j<span class="br0">]</span> <span class="sy0">=</span> list<span class="br0">[</span>pivot<span class="br0">]</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">        list<span class="br0">[</span>pivot<span class="br0">]</span> <span class="sy0">=</span> temp<span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">        quicksort<span class="br0">(</span>list<span class="sy0">,</span> low<span class="sy0">,</span> j <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">        quicksort<span class="br0">(</span>list<span class="sy0">,</span> j <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">,</span> high<span class="br0">)</span><span class="sy0">;</span></pre></li><li class="li1"><pre class="de1">    <span class="br0">}</span></pre></li><li class="li1"><pre class="de1"><span class="br0">}</span></pre></li></ol></div></div></div></div></div></div></div>
+
+
+<p><br></p>
+
+
+<div class="hk1_style-wrap5"><div class="hk1_style-wrap4"><div class="hk1_style-wrap3"><div class="hk1_style-wrap2"><div class="hk1_style-wrap"><div class="hk1_style"><div class="bash"><pre class="de1">$ <span class="kw2">cc</span> pgm29.c
+$ a.out
+Enter the number of elements: <span class="nu0">6</span>
+Enter the elements to be sorted:
+<span class="nu0">67</span>
+<span class="nu0">45</span>
+<span class="nu0">24</span>
+<span class="nu0">98</span>
+<span class="nu0">12</span>
+<span class="nu0">38</span>
+After applying quick <span class="kw2">sort</span>
+<span class="nu0">12</span> <span class="nu0">24</span> <span class="nu0">38</span> <span class="nu0">45</span> <span class="nu0">67</span> <span class="nu0">98</span></pre></div></div></div></div></div></div></div>
+
+
+<p><strong>Sanfoundry Global Education &amp; Learning Series – 1000 C Programs.</strong><br><br><a href="http://www.sanfoundry.com/best-reference-books-c-programming-data-structures-algorithms/">Here’s the list of Best Reference Books in C Programming, Data-Structures and Algorithms</a></p>
+<div style="text-align:justify">
+If you wish to look at other example programs on Searching and Sorting, go to <a href="http://www.sanfoundry.com/c-programming-examples-searching-sorting/"> C Programming Examples on Searching and Sorting</a>. If you wish to look at programming examples on all topics, go to <a href="http://www.sanfoundry.com/c-programming-examples/"> C Programming Examples</a>.
+</div>
+<div class="dd_post_share"><div class="dd_buttons"><div class="dd_button"><script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/all(1).js"></script><fb:like href="http://www.sanfoundry.com/c-program-quick-sort-recursion/" send="false" show_faces="false" layout="button_count" width="92" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=139987706155608&amp;container_width=0&amp;href=http%3A%2F%2Fwww.sanfoundry.com%2Fc-program-quick-sort-recursion%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=92"><span style="vertical-align: bottom; width: 77px; height: 20px;"><iframe name="f6e055894" width="92px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/like.html" style="border: none; visibility: visible; width: 77px; height: 20px;" class=""></iframe></span></fb:like></div><div class="dd_button"><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/plusone.js" gapi_processed="true"></script><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1442061378928" name="I0_1442061378928" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div></div><div class="dd_button"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/tweet_button.8d007ddfc184e6776be76fe9e5e52d69.en.html" style="position: static; visibility: visible; width: 77px; height: 20px;" data-url="http://www.sanfoundry.com/c-program-quick-sort-recursion/"></iframe><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/widgets.js"></script></div><div class="dd_button"><script src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/in.js" type="text/javascript"></script><script type="IN/Share" data-url="http://www.sanfoundry.com/c-program-quick-sort-recursion/" data-counter="right"></script></div></div><div style="clear:both"></div></div><!-- Social Buttons Generated by Digg Digg plugin v5.3.6,
+    Author : Buffer, Inc
+    Website : http://bufferapp.com/diggdigg -->
+<div style="height: 275px; margin-top: 0px; text-align: center; border-top-width: 0px; border-top-style: solid; border-top-color: rgb(229, 229, 229); border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: rgb(229, 229, 229); visibility: visible; opacity: 1;">
+<div style="height: 15px; text-align: center; margin-bottom: 5px;">advertisements</div>
+<div style="height: 250px; visibility: visible; opacity: 1;">
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/fpi.js"></script><iframe id="sovrn_ad_unit_245371_async" margin="0" padding="0" frameborder="0" width="300" height="250" scrolling="no" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry.html" data-zid="245371" class="sovrn_ad_unit" style="margin: 0px; padding: 0px; border: 0px none; width: 300px; height: 250px; overflow: hidden;"></iframe>
+</div>
+</div>
+								</div><!-- .entry-content -->
+    
+    	
+			
+</article><!-- #post-7654 -->							
+					<div class="more-content">
+					  <div class="row-fluid">
+						<div class="span6 previous-post">
+						  « <a href="http://www.sanfoundry.com/c-program-sum-hp/" rel="prev">C Program to Find the Sum of H.P Series</a>						</div>
+						<div class="span6 next-post">
+						  <a href="http://www.sanfoundry.com/c-program-non-repeated-elements-array/" rel="next">C Program to Find the Number of Non Repeated Elements in an Array</a> »						</div>
+					  </div>
+					</div>
+				  
+									
+									
+					          <div class="sf-post"><a href="http://www.sanfoundry.com/about/">Manish Bhojasia</a>, a technology veteran with 19+ years @ Cisco &amp; Wipro, is Founder and CTO at Sanfoundry. He is Linux Kernel Developer and SAN Architect and is passionate about competency developments in these areas. He lives in Bangalore and delivers focused training sessions to IT professionals in Linux Kernel, Linux Debugging, Linux Device Drivers, Linux Networking, Linux Storage &amp; Cluster Administration, Advanced C Programming, SAN Storage Technologies, SCSI Internals and Storage Protocols such as iSCSI &amp; Fiber Channel. Stay connected with us below:<br>
+<a href="https://plus.google.com/104408026570656234343/posts">Google+</a> | <a href="http://www.facebook.com/sanfoundry">Facebook</a> | <a href="http://www.twitter.com/sanfoundry">Twitter</a> | <a href="https://www.linkedin.com/company/sanfoundry">LinkedIn</a>
+        </div>
+        
+<div id="taboola-below-article-thumbnails" class=" trc_related_container trc_spotlight_widget trc_elastic trc_elastic_trc_38156 "><div class="trc_rbox_container" style="display: block;"><div><div id="trc_wrapper_38156" class="trc_rbox thumbnails-b trc-content-sponsored " style="overflow: hidden; display: block;"><div id="trc_header_38156" class="trc_rbox_header trc_rbox_border_elm"><div class="trc_header_ext"><div class="logoDiv link-attribution "><a class="trc_desktop_attribution_link trc_attribution_position_top" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-b:Below%20Article%20Thumbnails:" target="_blank"><span>by Taboola</span></a><a class="trc_mobile_attribution_link trc_attribution_position_top" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-b:Below%20Article%20Thumbnails:" target="_blank"><span>by Taboola</span></a></div><div class="logoDiv link-disclosure  attribution-disclosure-link-sponsored"><a class="trc_desktop_disclosure_link trc_attribution_position_top" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-b:Below%20Article%20Thumbnails:" target="_blank"><span>Sponsored Links</span></a><a class="trc_mobile_disclosure_link trc_attribution_position_top" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-b:Below%20Article%20Thumbnails:" target="_blank"><span>Sponsored Links</span></a></div><div class="logoDiv link-disclosure  attribution-disclosure-link-hybrid"><a class="trc_desktop_disclosure_link trc_attribution_position_top" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-b:Below%20Article%20Thumbnails:" target="_blank"><span>Promoted Links</span></a><a class="trc_mobile_disclosure_link trc_attribution_position_top" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-b:Below%20Article%20Thumbnails:" target="_blank"><span>Promoted Links</span></a></div></div><span class="trc_rbox_header_span">You May Like</span></div><div id="outer_38156" class="trc_rbox_outer"><div id="rbox-t2m" class="trc_rbox_div trc_rbox_border_elm"><div id="internal_trc_38156"><div data-item-id="~~V1~~-1145095777679872605~~bEAjFWjSA9O8ZZXKNpXzURsLZcqF59u-nxaoexud4EWx0zpqFuspPNx5ZviG_F2BPbX-xB2LXDztRIQ0Tg7qHw" data-item-title="How Warren Buffet Finds Stocks " data-item-thumb="http://tse1.mm.bing.net/th?&amp;id=JN.Y3Tjmjj1urL4wcS65Dezng&amp;w=300&amp;h=300&amp;c=0&amp;pid=1.9&amp;rs=0&amp;p=0" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_1_child trc-first-recommendation trc-spotlight-first-recommendation  trc_excludable "><a title="How Warren Buffet Finds Stocks " href="http://www.talkmarkets.com/content/us-markets/the-investor-trait-and-how-buffett-would-find-analyze-and-value-stocks?post=69833&utm_source=taboola&utm_medium=referral" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//tse1.mm.bing.net/th%3F%26id%3DJN.Y3Tjmjj1urL4wcS65Dezng%26w%3D300%26h%3D300%26c%3D0%26pid%3D1.9%26rs%3D0%26p%3D0);"><span class="thumbnail-overlay"></span><span class="branding">TalkMarkets</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="How Warren Buffet Finds Stocks " href="http://www.talkmarkets.com/content/us-markets/the-investor-trait-and-how-buffett-would-find-analyze-and-value-stocks?post=69833&utm_source=taboola&utm_medium=referral" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 2;">How Warren Buffet Finds Stocks </span><span class="branding">TalkMarkets</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~-8995460305347669983~~grIwkgroLap7FRIYaPBQk794KwQDmRccf9Ad46JFy1oC5xsnLMQkNbbO3QBcrJMnPbX-xB2LXDztRIQ0Tg7qHw" data-item-title="Best Features Coming To Your Smartphone In 2016" data-item-thumb="http://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBm9bTq.img" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_2_child trc_excludable "><a title="Best Features Coming To Your Smartphone In 2016" href="http://www.msn.com/en-in/news/other/the-best-features-coming-to-your-smartphone-in-2016/ss-AAdRhBU?srcref=tbrss&OCID=TAB1Q50" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//img-s-msn-com.akamaized.net/tenant/amp/entityid/BBm9bTq.img);"><span class="thumbnail-overlay"></span><span class="branding">MSN</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Best Features Coming To Your Smartphone In 2016" href="http://www.msn.com/en-in/news/other/the-best-features-coming-to-your-smartphone-in-2016/ss-AAdRhBU?srcref=tbrss&OCID=TAB1Q50" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 2;">Best Features Coming To Your Smartphone In 2016</span><span class="branding">MSN</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~3785585053257850300~~3Drx-hv8PCy5H4hQb_E1QO0YxfBq8kupAoGtZaZ2yvxNkFsVyn0sUO0xvZ_Sh02fPbX-xB2LXDztRIQ0Tg7qHw" data-item-title="Heal Your Hair: Best Oil Therapies" data-item-thumb="http://www.askmeonwellness.com/sites/default/files/Oil%20nourishes%20your%20scalp%20and%20hair.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_3_child trc_excludable "><a title="Heal Your Hair: Best Oil Therapies" href="http://www.askmeonwellness.com/posts/hair-care/article/heal-your-hair-best-oil-therapies?utm_source=taboola&utm_medium=display&utm_campaign=wellness-24&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//www.askmeonwellness.com/sites/default/files/Oil%2520nourishes%2520your%2520scalp%2520and%2520hair.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Ask me.com</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Heal Your Hair: Best Oil Therapies" href="http://www.askmeonwellness.com/posts/hair-care/article/heal-your-hair-best-oil-therapies?utm_source=taboola&utm_medium=display&utm_campaign=wellness-24&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 2;">Heal Your Hair: Best Oil Therapies</span><span class="branding">Ask me.com</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~3598781493610671849~~Girzjxsf2VbBKg7WcmXr9SA8gbgl2m4_f8sGrc3SIUhBatLOuf0BlFLqsT3HV_1vPbX-xB2LXDztRIQ0Tg7qHw" data-item-title="More Consumer Orientated with the Tata Indigo eCS " data-item-thumb="http://i.autoportal.com/img/new-cars-gallery/tata/indigo-cs/exterior/006fb2e/tata-indigo-cs-006fb2e-1024x768.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_4_child trc_excludable "><a title="More Consumer Orientated with the Tata Indigo eCS " href="http://autoportal.com/newcars/tata/indigo-ecs/?utm_source=taboola&utm_medium=sanfoundry" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//i.autoportal.com/img/new-cars-gallery/tata/indigo-cs/exterior/006fb2e/tata-indigo-cs-006fb2e-1024x768.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Autoportal</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="More Consumer Orientated with the Tata Indigo eCS " href="http://autoportal.com/newcars/tata/indigo-ecs/?utm_source=taboola&utm_medium=sanfoundry" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 2;">More Consumer Orientated with the Tata Indigo eCS </span><span class="branding">Autoportal</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~-3111284369547207239~~ms4nZjS6DIdXuvHrb_E2VZexzlSSRLGiu0IPkdSlnKqnoS-QDNE4lgErPvQIvkJTPbX-xB2LXDztRIQ0Tg7qHw" data-item-title="Support Manoj Who Dedicated His Entire Life To Helping Others" data-item-thumb="http://cdn.taboolasyndication.com/libtrc/static/thumbnails/2378860e7ea83ccf818373f68879530f.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_5_child trc_excludable "><a title="Support Manoj Who Dedicated His Entire Life To Helping Others" href="https://milaap.org/stories/manoj?utm_source=taboola&utm_medium=referral" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//cdn.taboolasyndication.com/libtrc/static/thumbnails/2378860e7ea83ccf818373f68879530f.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Milaap.org</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Support Manoj Who Dedicated His Entire Life To Helping Others" href="https://milaap.org/stories/manoj?utm_source=taboola&utm_medium=referral" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 3;">Support Manoj Who Dedicated His Entire Life To Helping Others</span><span class="branding">Milaap.org</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~-452535547201022769~~RDruyr9Hm5GLJSu9bQ9YUFCmVmFW5FD9VC8PjCfxCirUy1l2tU_0WV2FhdYLWJ27PbX-xB2LXDztRIQ0Tg7qHw" data-item-title="7 Natural Ways to Increase Your Height" data-item-thumb="http://cdn.taboolasyndication.com/libtrc/static/thumbnails/53fadba9fe88642ea91b68285f7ea87b.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_6_child trc_excludable "><a title="7 Natural Ways to Increase Your Height" href="http://www.onlymyhealth.com/health-slideshow/7-natural-ways-to-increase-your-height-at-any-age-1424935494.html?utm_source=taboola&utm_medium=sanfoundry" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//cdn.taboolasyndication.com/libtrc/static/thumbnails/53fadba9fe88642ea91b68285f7ea87b.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Only My Health</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="7 Natural Ways to Increase Your Height" href="http://www.onlymyhealth.com/health-slideshow/7-natural-ways-to-increase-your-height-at-any-age-1424935494.html?utm_source=taboola&utm_medium=sanfoundry" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 2;">7 Natural Ways to Increase Your Height</span><span class="branding">Only My Health</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~-5841653996987045854~~L9wlBgy4VHV6CwNB70OH-yrq5uNgZzXSNAr0fJQ9Ovb0GxCA-5kkWJhkTvGdLPH_PbX-xB2LXDztRIQ0Tg7qHw" data-item-title="Triglycerides and Diabetes - Suggestions to Lower Them" data-item-thumb="http://www.diabetescare.net/content/images/taboola-triglycerides.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_7_child trc_excludable "><a title="Triglycerides and Diabetes - Suggestions to Lower Them" href="http://www.diabetescare.net/authors/clara-schneider/triglycerides-and-diabetes--10-suggestions-to-help-lower-them-when-elevated?utm_source=taboola&utm_medium=referral&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//www.diabetescare.net/content/images/taboola-triglycerides.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Diabetes Care</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Triglycerides and Diabetes - Suggestions to Lower Them" href="http://www.diabetescare.net/authors/clara-schneider/triglycerides-and-diabetes--10-suggestions-to-help-lower-them-when-elevated?utm_source=taboola&utm_medium=referral&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title">Triglycerides and Diabetes - Suggestions to Lower Them</span><span class="branding">Diabetes Care</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~-5966790658381824239~~29bMWu6OwJQ1m7cWFqCSWz6E9DHMGUuQnoL-1cIs_n93x-4qiwxTcnzpvzPPLrsdPbX-xB2LXDztRIQ0Tg7qHw" data-item-title="Come to Visit the Marine-Life Theme Park in Hong Kong" data-item-thumb="http://cdn.taboolasyndication.com/libtrc/static/thumbnails/871f18b176769f53aa7c57766025dbcf.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_8_child trc_excludable "><a title="Come to Visit the Marine-Life Theme Park in Hong Kong" href="https://ad.doubleclick.net/ddm/clk/294756583;121843329;r?utm_source=taboola&utm_medium=sanfoundry" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_160%2Cw_192%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//cdn.taboolasyndication.com/libtrc/static/thumbnails/871f18b176769f53aa7c57766025dbcf.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Hong Kong Tourism Board</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Come to Visit the Marine-Life Theme Park in Hong Kong" href="https://ad.doubleclick.net/ddm/clk/294756583;121843329;r?utm_source=taboola&utm_medium=sanfoundry" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title">Come to Visit the Marine-Life Theme Park in Hong Kong</span><span class="branding">Hong Kong Tourism Board</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div></div></div></div><div class="trc_clearer"></div></div></div></div></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'thumbnails-b',
+    container: 'taboola-below-article-thumbnails',
+    placement: 'Below Article Thumbnails',
+    target_type: 'mix'
+  });
+</script>
+                <div style="margin-top: 20px; border: 1px solid #E5E5E5;">
+<!-- Begin MailChimp Signup Form -->
+<link href="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+        #mc_embed_signup{background:#fdfdfd; clear:left; font:14px Helvetica,Arial,sans-serif; }
+        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<h4 align="center">Subscribe Sanfoundry Newsletters &amp; Posts</h4>
+<div id="mc_embed_signup">
+<form action="http://sanfoundry.us2.list-manage.com/subscribe/post?u=471d4b50bcfecab188f3c7a7f&id=1fe6e02d9b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" style="margin: 0.5em 0; padding-top: 0px; padding-bottom: 0px">
+
+<div class="mc-field-group">
+        <label for="mce-FNAME">Name <span class="asterisk">*</span>
+</label>
+        <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+</label>
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+
+<div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+</div>  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+        </div>
+        					
+				</div><!-- #content -->
+				
+				
+<div id="secondary" class="widget-area span3" style="visibility: visible; opacity: 1;">
+	
+		
+	<div id="sidebar" style="visibility: visible; opacity: 1;">
+	<aside id="text-95" class="widget-container widget_text"><h3 class="widget-title">Best Careers</h3>			<div class="textwidget"><div class="sf-postw-category">
+<a href="http://www.sanfoundry.com/salary-50l/">Developer Tracks</a><br>
+<a href="http://www.sanfoundry.com/san-storage-developer-training-courses/">SAN Developer</a><br>
+<a href="http://www.sanfoundry.com/linux-kernel-developer-training-courses-jobs/">Linux Kernel Developer</a><br>
+<a href="http://www.sanfoundry.com/linux-device-driver-developer-training/">Linux Driver Developer</a><br>
+<a href="http://www.sanfoundry.com/linux-network-developer-training/">Linux Network Developer</a><br><br>
+<a href="http://www.sanfoundry.com/sanfoundry-classes/">Live Training Photos</a><br>
+<a href="http://www.sanfoundry.com/professional-mentoring-coaching-career-guidance-cto/">Mentoring</a><br>
+<a href="http://www.sanfoundry.com/programming-discipline-and-software/">Software Productivity</a><br>
+<a href="http://www.sanfoundry.com/gdb-example-tutorial/">GDB Assignment</a><br>
+</div></div>
+		</aside><aside id="text-71" class="widget-container widget_text" style="visibility: visible; opacity: 1;">			<div class="textwidget" style="visibility: visible; opacity: 1;"><div style="height: 15px; text-align: center; margin-bottom: 5px; ">Advertisements</div>
+<div style="text-align: center; visibility: visible; opacity: 1;">
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/fpi(1).js"></script><iframe id="sovrn_ad_unit_303986_async" margin="0" padding="0" frameborder="0" width="160" height="600" scrolling="no" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry.html" data-zid="303986" class="sovrn_ad_unit" style="margin: 0px; padding: 0px; border: 0px none; width: 160px; height: 600px; overflow: hidden;"></iframe>
+</div>
+</div>
+		</aside><aside id="text-94" class="widget-container widget_text">			<div class="textwidget"><div id="taboola-right-rail-thumbnails" class=" trc_related_container trc_spotlight_widget trc_elastic trc_elastic_trc_18164 "><div class="trc_rbox_container" style="display: block;"><div><div id="trc_wrapper_18164" class="trc_rbox thumbnails-a trc-content-sponsored " style="overflow: hidden; display: block;"><div id="trc_header_18164" class="trc_rbox_header trc_rbox_border_elm"><div class="trc_header_ext"></div><span class="trc_rbox_header_span">From The Web</span></div><div id="outer_18164" class="trc_rbox_outer"><div id="rbox-t2m" class="trc_rbox_div trc_rbox_border_elm"><div id="internal_trc_18164"><div data-item-id="~~V1~~6356147030083463388~~SJygGgS6QdnuTOT3o2ZY-r94KwQDmRccf9Ad46JFy1rElDTKjFfe873p233We1Lv_rlJJDRaSalE0Df9MahkLA" data-item-title="Kevin Pietersen returns to South African cricket" data-item-thumb="http://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAe4tJL.img" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_1_child trc-first-recommendation trc-spotlight-first-recommendation  trc_excludable "><a title="Kevin Pietersen returns to South African cricket" href="http://www.msn.com/en-in/sports/other/kevin-pietersen-to-make-return-to-south-african-cricket/vi-AAe46rh?srcref=rss&OCID=TAB1Q80" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_84%2Cw_168%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAe4tJL.img);"><span class="thumbnail-overlay"></span><span class="branding">MSN</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Kevin Pietersen returns to South African cricket" href="http://www.msn.com/en-in/sports/other/kevin-pietersen-to-make-return-to-south-african-cricket/vi-AAe46rh?srcref=rss&OCID=TAB1Q80" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 2;">Kevin Pietersen returns to South African cricket</span><span class="branding">MSN</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~3114018562576877567~~0oqs7GRrwd58aUy7VcCk8q4-HZY6phBp9s8x9z9VCck61vq1e6s9xJsGPsU1T_hT_rlJJDRaSalE0Df9MahkLA" data-item-title="Apply For a Home Loan and go on a Vacation" data-item-thumb="http://blog.bajajfinserv.in/wp-content/uploads/SHOL-Home-Loan.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_2_child trc_excludable "><a title="Apply For a Home Loan and go on a Vacation" href="http://blog.bajajfinserv.in/apply-for-a-home-loan-and-go-on-a-vacation-1/?utm_source=paid&utm_medium=taboola_applyforhomeloanandgoforvacation&utm_campaign=blog_saleoffer&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_84%2Cw_168%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//blog.bajajfinserv.in/wp-content/uploads/SHOL-Home-Loan.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Bajaj Finserv</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Apply For a Home Loan and go on a Vacation" href="http://blog.bajajfinserv.in/apply-for-a-home-loan-and-go-on-a-vacation-1/?utm_source=paid&utm_medium=taboola_applyforhomeloanandgoforvacation&utm_campaign=blog_saleoffer&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 2;">Apply For a Home Loan and go on a Vacation</span><span class="branding">Bajaj Finserv</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~-7843012471967660161~~l_kne6li-ZlFNOz6Bh37jqtdLnzcdIVD8MustugbJc_OfZzus2LavzKe65fSGZfR_rlJJDRaSalE0Df9MahkLA" data-item-title="Investing in SIP Can Be So Simple, You Can Call it a Child’s Play!" data-item-thumb="https://image-store.slidesharecdn.com/faac5109-fe2a-4fd6-9cee-3f95e2cff820-medium.jpeg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_3_child trc_excludable "><a title="Investing in SIP Can Be So Simple, You Can Call it a Child’s Play!" href="https://www.myuniverse.co.in/zipsip?utm_source=taboola_cta&utm_medium=zipsip_childs_play&utm_adgroupid=Pa-Cont-Dire-Tabo-CoZI&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_84%2Cw_168%2Cc_fill%2Cg_faces%2Ce_sharpen/https%3A//image-store.slidesharecdn.com/faac5109-fe2a-4fd6-9cee-3f95e2cff820-medium.jpeg);"><span class="thumbnail-overlay"></span><span class="branding">MyUniverse</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Investing in SIP Can Be So Simple, You Can Call it a Child’s Play!" href="https://www.myuniverse.co.in/zipsip?utm_source=taboola_cta&utm_medium=zipsip_childs_play&utm_adgroupid=Pa-Cont-Dire-Tabo-CoZI&utm_term=sanfoundry" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 3;">Investing in SIP Can Be So Simple, You Can Call it a Child’s Play!</span><span class="branding">MyUniverse</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div><div data-item-id="~~V1~~6386972501257029163~~ey_-KPjjbLQo4y0UyOeWyUdhUyxWiOOOJ-Ef7IrXwo2UXMGKH1sl8TSBatFDknZc_rlJJDRaSalE0Df9MahkLA" data-item-title="Assured Benefits Available Worth Up To Rs 1.2 Crore" data-item-thumb="http://cdn.taboolasyndication.com/libtrc/static/thumbnails/80a218e5ff41499d1e8f9fc39e8ac6b7.jpg" data-item-syndicated="true" class="videoCube trc_spotlight_item origin-default thumbnail_top syndicatedItem videoCube_4_child trc_excludable "><a title="Assured Benefits Available Worth Up To Rs 1.2 Crore" href="https://ad.doubleclick.net/ddm/clk/294953906;122004993;m" rel="nofollow" target="_blank" class=" item-thumbnail-href "><div class="thumbBlock_holder"><span class="thumbBlock" style="background-image: url(http://images.taboola.com/taboola/image/fetch/f_jpg%2Cq_80%2Ch_84%2Cw_168%2Cc_fill%2Cg_faces%2Ce_sharpen/http%3A//cdn.taboolasyndication.com/libtrc/static/thumbnails/80a218e5ff41499d1e8f9fc39e8ac6b7.jpg);"><span class="thumbnail-overlay"></span><span class="branding">Ford</span><span class="static-text top-right"></span></span><div class="videoCube_aspect"></div></div></a><a title="Assured Benefits Available Worth Up To Rs 1.2 Crore" href="https://ad.doubleclick.net/ddm/clk/294953906;122004993;m" rel="nofollow" target="_blank" class=" item-label-href "><span class="video-label-box"><span class="video-label video-title trc_ellipsis " style="-webkit-line-clamp: 3;">Assured Benefits Available Worth Up To Rs 1.2 Crore</span><span class="branding">Ford</span></span></a><div class=" trc_user_exclude_btn " title="Remove this item"></div><div class=" trc_exclude_overlay trc_fade "></div><div class=" trc_undo_btn ">Undo</div></div></div></div></div><div class="trc-widget-footer"><div class="logoDiv link-attribution "><a class="trc_desktop_attribution_link trc_attribution_position_bottom" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-a:Right%20Rail%20Thumbnails:" target="_blank"><span>by Taboola</span></a><a class="trc_mobile_attribution_link trc_attribution_position_bottom" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-a:Right%20Rail%20Thumbnails:" target="_blank"><span>by Taboola</span></a></div><div class="logoDiv link-disclosure  attribution-disclosure-link-sponsored"><a class="trc_desktop_disclosure_link trc_attribution_position_bottom" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-a:Right%20Rail%20Thumbnails:" target="_blank"><span>Sponsored Links</span></a><a class="trc_mobile_disclosure_link trc_attribution_position_bottom" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-a:Right%20Rail%20Thumbnails:" target="_blank"><span>Sponsored Links</span></a></div><div class="logoDiv link-disclosure  attribution-disclosure-link-hybrid"><a class="trc_desktop_disclosure_link trc_attribution_position_bottom" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-a:Right%20Rail%20Thumbnails:" target="_blank"><span>Promoted Links</span></a><a class="trc_mobile_disclosure_link trc_attribution_position_bottom" rel="nofollow" href="http://www.taboola.com/en/popup?template=colorbox&taboola_utm_source=sanfoundry&taboola_utm_medium=bytaboola&taboola_utm_content=thumbnails-a:Right%20Rail%20Thumbnails:" target="_blank"><span>Promoted Links</span></a></div></div><div class="trc_clearer"></div></div></div></div></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'thumbnails-a',
+    container: 'taboola-right-rail-thumbnails',
+    placement: 'Right Rail Thumbnails',
+    target_type: 'mix'
+  });
+</script>
+</div>
+		</aside><aside id="text-104" class="widget-container widget_text" style="visibility: visible; opacity: 1;">			<div class="textwidget" style="visibility: visible; opacity: 1;"><div style="height: 15px; text-align: center; margin-bottom: 5px; ">Advertisements</div>
+<div style="text-align: center; visibility: visible; opacity: 1;">
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/fpi(2).js"></script><iframe id="sovrn_ad_unit_304454_async" margin="0" padding="0" frameborder="0" width="160" height="600" scrolling="no" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry.html" data-zid="304454" class="sovrn_ad_unit" style="margin: 0px; padding: 0px; border: 0px none; width: 160px; height: 600px; overflow: hidden;"></iframe>
+</div>
+</div>
+		</aside>	</div><!-- #sidebar -->
+	
+		
+</div><!-- #secondary .widget-area .span3 -->					
+			</div><!-- #container .row-fluid-->
+			
+			<div style="height: 90px; margin-top: 20px; text-align: center; visibility: visible; opacity: 1;">
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/fpi(3).js"></script><iframe id="sovrn_ad_unit_304453_async" margin="0" padding="0" frameborder="0" width="728" height="90" scrolling="no" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry.html" data-zid="304453" class="sovrn_ad_unit" style="margin: 0px; padding: 0px; border: 0px none; width: 728px; height: 90px; overflow: hidden;"></iframe>
+</div>
+        		
+		</div><!--container fluid -->
+		
+	</div><!-- container -->
+
+</div><iframe src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/cTrvNaRi.html" width="0" height="0" style="display: none;"></iframe><iframe id="sovrn_ad_unit_303987_beacon" margin="0" padding="0" frameborder="0" width="1" height="1" scrolling="no" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/beacon.html" style="margin: 0px; padding: 0px; border: 0px none; width: 1px; height: 1px; overflow: hidden;"></iframe><!-- container full width -->
+
+ 
+
+<div id="footer_widgets_wrapper" class="container-full-width">
+  <div id="footer_wrapper" class="container">
+    <div id="wrapper" class="container-fluid">
+    
+        
+    <div id="footer-widgets" class="row-fluid">
+      <div id="footer-widget-container" class="span12">
+        <div class="row-fluid">
+          <aside id="text-102" class="widget-container span3 widget_text">			<div class="textwidget"></div>
+		</aside>         </div><!-- .row-fluid -->
+      </div><!-- #footer-widget-container -->
+    </div><!-- #footer-widgets .row-fluid  -->
+    
+        
+    	
+    
+        
+    </div><!-- #wrapper .container-fluid -->
+  </div><!-- footer wrapper -->
+</div><!-- footer widgets wrapper -->
+
+        
+  		<div id="footer_menu" class="container-full-width">
+			<div id="footer_menu_container" class="container">
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="menu-footermenu-container"><ul id="menu-footermenu" class="menu"><li id="menu-item-72461" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72461"><a href="http://www.sanfoundry.com/tos-privacy-policy/">Terms of Use &amp; Privacy Policy</a></li>
+<li id="menu-item-72462" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72462"><a href="http://www.sanfoundry.com/copyright/">Copyright</a></li>
+<li id="menu-item-72463" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72463"><a href="http://www.sanfoundry.com/technology-focussed-groups/">Technology Groups</a></li>
+<li id="menu-item-72464" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72464"><a href="http://www.sanfoundry.com/internship/">Interns</a></li>
+<li id="menu-item-72465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72465"><a href="http://www.sanfoundry.com/jobs/">Jobs</a></li>
+<li id="menu-item-72466" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-72466"><a href="http://www.sanfoundry.com/sitemap_index.xml">Sitemap</a></li>
+</ul></div>					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-full-width" id="after_footer">
+		<div class="container">
+			<div class="container-fluid">
+				<footer class="site-footer row-fluid">
+					<div class="span6">
+						<div id="credit">
+													</div>
+					</div>
+
+					<!-- Adds the afterfooter copyright area -->
+					<div class="span6">
+												<div id="copyright">
+							© 2011-2015 Sanfoundry. All Rights Reserved.						</div>
+					</div>
+				</footer>
+				<!-- row-fluid -->
+			</div>
+			<!-- .container-fluid-->
+		</div>
+		<!-- .container -->
+	</div>    <!-- #after_footer -->
+    
+
+  
+    
+
+  
+    
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+<script type="text/javascript">
+  var vglnk = { key: '578ba747486ae5820c61a8f7df04acc2' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = '//cdn.viglink.com/api/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script><script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/jquery.elastislide.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/elements.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/retina-1.1.0.min.js"></script>
+
+
+
+<!-- Dynamic page generated in 2.092 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-09-12 16:52:32 -->
+
+<!-- Compression = gzip --><div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="lbOverlay" style="display: none;"></div><div id="lbCenter" style="display: none;"><div id="lbImage"><div style="position: relative;"><a id="lbPrevLink" href="http://www.sanfoundry.com/c-program-quick-sort-recursion/#"></a><a id="lbNextLink" href="http://www.sanfoundry.com/c-program-quick-sort-recursion/#"></a></div></div></div><div id="lbBottomContainer" style="display: none;"><div id="lbBottom"><a id="lbCloseLink" href="http://www.sanfoundry.com/c-program-quick-sort-recursion/#"></a><div id="lbCaption"></div><div id="lbNumber"></div><div style="clear: both;"></div></div></div><iframe name="oauth2relay1427366218" id="oauth2relay1427366218" src="./C Program to Perform Quick Sort on a set of Entries from a File using Recursion - Sanfoundry_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><form class="trc-hidden" target="tb-trc-transportFrame-4423" method="post" action="http://trc.taboola.com/sanfoundry/log/3/available" style="display: none;"><input name="ri" type="hidden" value="862fcdd96533c6ede8f2b9ec2287e894"><input name="sd" type="hidden" value="v2_754bf289951bc0a18c9f66c004c56db6_4a46948a-fd04-4c2e-928b-4e855db32961_1442060417_1442061378_CIi3jgYQhIM-GM_EuYz8KSAV"><input name="ui" type="hidden" value="4a46948a-fd04-4c2e-928b-4e855db32961"><input name="pi" type="hidden" value="/c-program-quick-sort-recursion"><input name="wi" type="hidden" value="-1061239372581750373"><input name="pt" type="hidden" value="text"><input name="vi" type="hidden" value="1442061378127"><input name="li" type="hidden" value="rbox-t2m"><input name="utm" type="hidden" value="3,78,34800,36379"><input name="ppb" type="hidden" value="CEo"><input name="cpb" type="hidden" value="EhMxNzYtUkVMRUFTRS03MzQ2NjkxGAEgAg"><input name="tim" type="hidden" value="18:06:19.735"><input name="id" type="hidden" value="4423"><input name="llvl" type="hidden" value="1"><input name="cv" type="hidden" value="176-RELEASE-7346691"><input name="fil" type="hidden" value="[{&quot;tii&quot;:&quot;~~V1~~-1145095777679872605~~bEAjFWjSA9O8ZZXKNpXzURsLZcqF59u-nxaoexud4EWx0zpqFuspPNx5ZviG_F2BPbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~-8995460305347669983~~grIwkgroLap7FRIYaPBQk794KwQDmRccf9Ad46JFy1oC5xsnLMQkNbbO3QBcrJMnPbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~3785585053257850300~~3Drx-hv8PCy5H4hQb_E1QO0YxfBq8kupAoGtZaZ2yvxNkFsVyn0sUO0xvZ_Sh02fPbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~3598781493610671849~~Girzjxsf2VbBKg7WcmXr9SA8gbgl2m4_f8sGrc3SIUhBatLOuf0BlFLqsT3HV_1vPbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~-3111284369547207239~~ms4nZjS6DIdXuvHrb_E2VZexzlSSRLGiu0IPkdSlnKqnoS-QDNE4lgErPvQIvkJTPbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~-452535547201022769~~RDruyr9Hm5GLJSu9bQ9YUFCmVmFW5FD9VC8PjCfxCirUy1l2tU_0WV2FhdYLWJ27PbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~-5841653996987045854~~L9wlBgy4VHV6CwNB70OH-yrq5uNgZzXSNAr0fJQ9Ovb0GxCA-5kkWJhkTvGdLPH_PbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~-5966790658381824239~~29bMWu6OwJQ1m7cWFqCSWz6E9DHMGUuQnoL-1cIs_n93x-4qiwxTcnzpvzPPLrsdPbX-xB2LXDztRIQ0Tg7qHw&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;}]"></form><span><iframe class="trc-hidden" id="tb-trc-transportFrame-4423" name="tb-trc-transportFrame-4423" width="0" height="0" style="display:none"></iframe></span><div id="tbl-aug-aegp2j" class="trc_popover_aug_container"><div id="tbl-aug-sqrur5" class="trc_popover_aug_container"><div id="tbl-aug-87xifw" class="trc_popover_aug_container"><div class=" trc_popover trc_popover_fade trc_bottom "><div class=" trc_popover_arrow "></div><iframe frameborder="0" scrolling="no" src="javascript:void(0)" style="width: 100%;"></iframe></div></div></div></div><form class="trc-hidden" target="tb-trc-transportFrame-9604" method="post" action="http://trc.taboola.com/sanfoundry/log/3/available" style="display: none;"><input name="ri" type="hidden" value="382509445ac0e6f336679353e569ddce"><input name="sd" type="hidden" value="v2_754bf289951bc0a18c9f66c004c56db6_4a46948a-fd04-4c2e-928b-4e855db32961_1442060417_1442061378_CIi3jgYQhIM-GM_EuYz8KSAV"><input name="ui" type="hidden" value="4a46948a-fd04-4c2e-928b-4e855db32961"><input name="pi" type="hidden" value="/c-program-quick-sort-recursion"><input name="wi" type="hidden" value="-1061239372581750373"><input name="pt" type="hidden" value="text"><input name="vi" type="hidden" value="1442061378127"><input name="li" type="hidden" value="rbox-t2m"><input name="utm" type="hidden" value="3,78,34800,36379"><input name="ppb" type="hidden" value="COwG"><input name="cpb" type="hidden" value="EhMxNzYtUkVMRUFTRS03MzQ2NjkxGAEgAg"><input name="tim" type="hidden" value="18:06:19.829"><input name="id" type="hidden" value="9604"><input name="llvl" type="hidden" value="1"><input name="cv" type="hidden" value="176-RELEASE-7346691"><input name="fil" type="hidden" value="[{&quot;tii&quot;:&quot;~~V1~~6356147030083463388~~SJygGgS6QdnuTOT3o2ZY-r94KwQDmRccf9Ad46JFy1rElDTKjFfe873p233We1Lv_rlJJDRaSalE0Df9MahkLA&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~3114018562576877567~~0oqs7GRrwd58aUy7VcCk8q4-HZY6phBp9s8x9z9VCck61vq1e6s9xJsGPsU1T_hT_rlJJDRaSalE0Df9MahkLA&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~-7843012471967660161~~l_kne6li-ZlFNOz6Bh37jqtdLnzcdIVD8MustugbJc_OfZzus2LavzKe65fSGZfR_rlJJDRaSalE0Df9MahkLA&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;},{&quot;tii&quot;:&quot;~~V1~~6386972501257029163~~ey_-KPjjbLQo4y0UyOeWyUdhUyxWiOOOJ-Ef7IrXwo2UXMGKH1sl8TSBatFDknZc_rlJJDRaSalE0Df9MahkLA&quot;,&quot;tipt&quot;:&quot;SP&quot;,&quot;tit&quot;:&quot;video&quot;,&quot;tids&quot;:&quot;a&quot;}]"></form><span><iframe class="trc-hidden" id="tb-trc-transportFrame-9604" name="tb-trc-transportFrame-9604" width="0" height="0" style="display:none"></iframe></span></body></html>

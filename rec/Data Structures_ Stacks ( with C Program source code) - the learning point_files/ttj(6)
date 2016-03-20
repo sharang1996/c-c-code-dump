@@ -1,0 +1,12 @@
+var apn_geo = {
+  "DE" : {click_url: "http://www.dkms.de/?utm_source=AppNexus&utm_medium=banner&utm_campaign=cotton", img_url : "http://cdn.adnxs.com/p/79/54/54/ab/795454abdfc1a6cb4cde92599d46d5ab.jpg"},
+    "FR" : {click_url: "http://www4.smartadserver.com/call/cliccommand/10656433/286342", img_url : "http://cdn.adnxs.com/p/4a/17/56/26/4a175626e8ad8aa0fed1c6cb99549de3.JPG"}
+}
+if ("IN" in apn_geo) {
+document.write("<a target=\"_blank\" href=http://sin1.g.adnxs.com/click?AAAAAAAAAAAAAAAAAAAAAJqZmZmZmbk_AAAAAAAAAAAAAAAAAAAAAOhrahuqrnAJYwVOst_5U1jRHvRVAAAAAHdiIAA2AQAA5QAAAAIAAACAZPwBajkFAAAAAQAAAAAAVVNEACwB-gCoAQAAAAAAAgEAAQIAAAAAvxV6KwAAAAA./referrer=http%3A%2F%2Fwww.thelearningpoint.net%2Fcomputer-science%2Fdata-structures-stacks--with-c-program-source-code/clickenc=" + apn_geo["IN"].click_url
+ + "><img src=" + apn_geo["IN"].img_url + "></a>");  
+}else {
+  img_url = "http://cdn.adnxs.com/p/9d/c3/ef/2c/9dc3ef2caa2d1fde4b5b45c50237f34a.jpg";
+  click_url = "http://psa.appnexus.com/givology";
+  document.write("<a target=\"_blank\" href=http://sin1.g.adnxs.com/click?AAAAAAAAAAAAAAAAAAAAAJqZmZmZmbk_AAAAAAAAAAAAAAAAAAAAAOhrahuqrnAJYwVOst_5U1jRHvRVAAAAAHdiIAA2AQAA5QAAAAIAAACAZPwBajkFAAAAAQAAAAAAVVNEACwB-gCoAQAAAAAAAgEAAQIAAAAAvxV6KwAAAAA./referrer=http%3A%2F%2Fwww.thelearningpoint.net%2Fcomputer-science%2Fdata-structures-stacks--with-c-program-source-code/clickenc=" + click_url + "><img src=" + img_url + "></a>");
+}document.write('<scr'+'ipt type="text/javascript" src="http://uat-net.technoratimedia.com/pixel?rid=4027264878445767&id=2&rev=0&cp=0&sid=34603&pid=2122359&sz=300x250&ci=33318016&cb=1442062033&ecp=0.1&bp=0&gz=&gc=Pune&gs=IN%3A16&cc=IN&pr=342378"></scr'+'ipt>');document.write('<scr' + 'ipt src="http://cdn.adnxs.com/ib/async_usersync.js"></scr'+'ipt>');

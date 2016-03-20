@@ -1,0 +1,25 @@
+OX_3290744854({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?bi=e16df96c-cfcf-4dbb-b16a-f4bbeda95636&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"536487",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "width":"728",
+            "height":"90",
+            "html":"<script type=\"text/javascript\" src=\"//ap.lijit.com/www/delivery/pb.js\"></script>",
+            "target":"_blank",
+            "ts":"1fHJpZD0yMzlhZTZhZC01ZGIyLTQwZmQtYmJhOS03ZTZkMTlkZDcyNjl8cnQ9MTQ0MjA2MDYzNnxhdWlkPTUzNjQ4N3xhdW09RE1JRC5XRUJ8c2lkPTExNDY4OHxwdWI9ODM0OTl8cGM9VVNEfHJhaWQ9OWU5NjBjNDQtM2FhZi00ZGExLWE1MmYtNzA2NTA1YWM5ZDY1fHVyPUJyODdraDVJY3o",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\" src=\"//ap.lijit.com/www/delivery/pb.js\"></script>"
+          }
+        ]
+      }
+    ]
+  }
+});

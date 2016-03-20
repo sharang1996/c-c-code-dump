@@ -1,0 +1,26 @@
+*HTML..............................started...basics
+*CSS
+*Javascript
+*android app developments..........started...basics
+SQL................................started...basics
+php
+XML................................basics from android
+##*imp:web services(data transfer to and fro devices)
+
+
+USEFUL UBUNTU SHELL COMMANDS
+
+youtube-dl -cit (playlist link here)
+
+youtube-dl -cit https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBsvRxJJOzG4r4k_zLKrnxl -c
+
+httrack (link)       //for the entire website
+
+
+SQL
+
+mysql -uroot -p (sharang)
+create database database_name;   --can be done in sql file
+use database_name;              --can be done in file
+--if done in file,exit mysql and mysql -uroot -p </path/to/filename.ext
+--for clearing \c
